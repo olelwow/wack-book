@@ -10,23 +10,40 @@
 }
 // Sätter fonten till Times New Roman samt vald textfärg och textstorlek enligt variablerna som matas in.
 
+@mixin absoluteCenterWithFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 $elementColor: #b6dcac;
 $backgroundColor: #e4f0f6;
 $baseTextColor: #070707;
 
-body {
+#root {
   background-color: $backgroundColor;
+  height: 100vh;
+  @include absoluteCenterWithFlex;
+  flex-direction: column;
 
   #headerBar {
     margin-top: 1.5em;
     height: 8em;
     background-color: $elementColor;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include absoluteCenterWithFlex;
 
     h1 {
       @include textStyle($baseTextColor, 4.5em);
     }
+  }
+
+  #loginContainer {
+    position: static;
+    // Vissa element hämtade från materialUI har ändringar på sin position property.
+    // Ändra till static för att få önskat beteende.
+    margin-top: 5em;
+    background-color: $elementColor;
+    width: 500px;
+    height: 600px;
   }
 }

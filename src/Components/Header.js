@@ -1,7 +1,7 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 
-const Header = () => {
+const HeaderBeforeLogin = () => {
   return (
     <AppBar id="headerBar">
       <h1>WackBook</h1>
@@ -9,4 +9,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderBeforeLogin;
