@@ -3,19 +3,31 @@
   padding: 0;
 }
 
-body {
+#root {
   background-color: #e4f0f6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-body #headerBar {
+#root #headerBar {
   margin-top: 1.5em;
   height: 8em;
   background-color: #b6dcac;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
-body #headerBar h1 {
+#root #headerBar h1 {
   font-family: "Times New Roman", Times, serif;
   color: #070707;
   font-size: 4.5em;
+}
+#root #loginContainer {
+  position: static;
+  margin-top: 5em;
+  background-color: #b6dcac;
+  width: 500px;
+  height: 600px;
 }/*# sourceMappingURL=App.css.map */

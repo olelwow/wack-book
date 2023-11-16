@@ -1,8 +1,14 @@
 import "./App.css";
-import Header from "./Components/Header";
+import HeaderBeforeLogin from "./Components/Header";
+import LoginForm from "./Components/Login";
 
 function App() {
-  return <Header />;
+  return (
+    <>
+      <HeaderBeforeLogin />
+      <LoginForm />
+    </>
+  );
 }
 
 export default App;
