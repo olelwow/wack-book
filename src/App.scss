@@ -3,5 +3,30 @@
   padding: 0;
 }
 
+@mixin textStyle($textColor, $fontSize) {
+  font-family: "Times New Roman", Times, serif;
+  color: $textColor;
+  font-size: $fontSize;
+}
+// Sätter fonten till Times New Roman samt vald textfärg och textstorlek enligt variablerna som matas in.
+
 $elementColor: #b6dcac;
-$backgroundColor: #fff;
+$backgroundColor: #e4f0f6;
+$baseTextColor: #070707;
+
+body {
+  background-color: $backgroundColor;
+
+  #headerBar {
+    margin-top: 1.5em;
+    height: 8em;
+    background-color: $elementColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      @include textStyle($baseTextColor, 4.5em);
+    }
+  }
+}
