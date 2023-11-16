@@ -1,12 +1,12 @@
 import "./App.css";
 import HeaderBeforeLogin from "./Components/Header";
-import LoginForm from "./Components/Login";
+import SignIn from "./Components/Login";
 
 function App() {
   return (
     <>
       <HeaderBeforeLogin />
-      <LoginForm />
+      <SignIn />
     </>
   );
 }
