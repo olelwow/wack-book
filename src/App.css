@@ -24,10 +24,24 @@
   color: #070707;
   font-size: 4.5em;
 }
-#root #loginContainer {
-  position: static;
-  margin-top: 5em;
+#root #signInForm {
+  padding: 3em;
   background-color: #b6dcac;
-  width: 500px;
-  height: 600px;
+  border-radius: 5px;
+}
+#root #signInForm #logInButton {
+  background-color: #e4f0f6;
+  color: #070707;
+}
+#root #signInForm #logInButton:hover {
+  background-color: rgba(111, 117, 121, 0.275);
+}
+#root #signInForm #noAccount {
+  display: flex;
+  justify-content: center;
+  color: #070707;
+  text-decoration-color: #070707;
+}
+#root #signInForm #noAccount:hover {
+  text-decoration-color: white;
 }/*# sourceMappingURL=App.css.map */

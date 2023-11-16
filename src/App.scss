@@ -19,6 +19,7 @@
 
 $elementColor: #b6dcac;
 $backgroundColor: #e4f0f6;
+$hoverColor: rgba(111, 117, 121, 0.275);
 $baseTextColor: #070707;
 
 #root {
@@ -38,13 +39,29 @@ $baseTextColor: #070707;
     }
   }
 
-  #loginContainer {
-    position: static;
-    // Vissa element hämtade från materialUI har ändringar på sin position property.
-    // Ändra till static för att få önskat beteende.
-    margin-top: 5em;
+  #signInForm {
+    padding: 3em;
     background-color: $elementColor;
-    width: 500px;
-    height: 600px;
+    border-radius: 5px;
+
+    #logInButton {
+      background-color: $backgroundColor;
+      color: $baseTextColor;
+
+      &:hover {
+        background-color: $hoverColor;
+      }
+    }
+
+    #noAccount {
+      display: flex;
+      justify-content: center;
+      color: $baseTextColor;
+      text-decoration-color: $baseTextColor;
+
+      &:hover {
+        text-decoration-color: white;
+      }
+    }
   }
 }
