@@ -72,6 +72,7 @@ export default function SignUp() {
               label="Lösenord"
               name="password"
             />
+
             <Button
               id="signUpButton"
               type="submit"

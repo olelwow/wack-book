@@ -28,6 +28,30 @@ $baseTextColor: #070707;
   @include absoluteCenterWithFlex;
   flex-direction: column;
 
+  #loggedInHeaderBar {
+    margin-top: 1.5em;
+    height: 8em;
+    background-color: $elementColor;
+    @include absoluteCenterWithFlex;
+    flex-direction: row;
+    overflow: hidden;
+
+    h1 {
+      @include textStyle($baseTextColor, 4em);
+      margin-left: 0.5em;
+    }
+
+    #accountSettingsContainer {
+      margin-left: 0;
+      position: fixed;
+      right: 0;
+
+      #accountButton {
+        margin-left: 0;
+      }
+    }
+  }
+
   #headerBar {
     margin-top: 1.5em;
     height: 8em;
