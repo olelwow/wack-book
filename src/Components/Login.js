@@ -77,7 +77,7 @@ export default function SignIn() {
               Logga in
             </Button>
 
-            <Link id="noAccount" href="#" variant="body2">
+            <Link id="noAccount" href="./Pages/SignUpPage" variant="body2">
               {"Don't have an account? Sign Up"}
             </Link>
           </Box>
