@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -11,16 +11,50 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
+let userCount = 0;
 
+if (userCount > 0) {
+  userCount += userCount;
+} else {
+  userCount = 0;
+}
+
+let users = {};
 export default function SignUp() {
-  const handleSubmit = (event) => {
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+
+  function validateForm() {
+    const newErrors = {};
+
+    if (!firstname) {
+      newErrors.email = "Firstname is required.";
+    }
+
+    if (!lastname) {
+      newErrors.password = "Lastname is required.";
+    }
+
+    if (!password) {
+      newErrors.password = "Password is required.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }
+
+  function handleSubmit(event) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
+    let existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+    users = { 0: firstname, 1: lastname, 2: password };
+    existingUsers.push(users);
+    localStorage.setItem("users", JSON.stringify(existingUsers));
+
+    console.log(existingUsers);
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -40,30 +74,31 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Registrera nytt konto
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
               id="firstName"
               label="Förnamn"
-              name="förnamn"
+              name="firstname"
               autoFocus
+              onChange={(e) => setFirstname(e.target.value)}
             />
+            {errors.firstname && (
+              <div className="error">{errors.firstname}</div>
+            )}
             <TextField
               margin="normal"
               required
               fullWidth
               name="lastname"
               label="Efternamn"
-              type="lastname"
+              type="lastnameInput"
               id="lastName"
+              onChange={(e) => setLastname(e.target.value)}
             />
+            {errors.lastname && <div className="error">{errors.lastname}</div>}
             <TextField
               margin="normal"
               required
@@ -71,7 +106,10 @@ export default function SignUp() {
               id="signUpPassWord"
               label="Lösenord"
               name="password"
+              type="passwordInput"
+              onChange={(e) => setPassword(e.target.value)}
             />
+            {errors.password && <div className="error">{errors.password}</div>}
 
             <Button
               id="signUpButton"
