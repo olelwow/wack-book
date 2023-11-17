@@ -44,6 +44,10 @@ $baseTextColor: #070707;
     background-color: $elementColor;
     border-radius: 5px;
 
+    form input {
+      background-color: $backgroundColor;
+    }
+
     #logInButton {
       background-color: $backgroundColor;
       color: $baseTextColor;
@@ -54,6 +58,35 @@ $baseTextColor: #070707;
     }
 
     #noAccount {
+      display: flex;
+      justify-content: center;
+      color: $baseTextColor;
+      text-decoration-color: $baseTextColor;
+
+      &:hover {
+        text-decoration-color: white;
+      }
+    }
+  }
+
+  #signUpForm {
+    padding: 3em;
+    background-color: $elementColor;
+    border-radius: 5px;
+
+    form input {
+      background-color: $backgroundColor;
+    }
+
+    #signUpButton {
+      background-color: $backgroundColor;
+      color: $baseTextColor;
+
+      &:hover {
+        background-color: $hoverColor;
+      }
+    }
+    #haveAccount {
       display: flex;
       justify-content: center;
       color: $baseTextColor;

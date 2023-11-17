@@ -29,6 +29,9 @@
   background-color: #b6dcac;
   border-radius: 5px;
 }
+#root #signInForm form input {
+  background-color: #e4f0f6;
+}
 #root #signInForm #logInButton {
   background-color: #e4f0f6;
   color: #070707;
@@ -43,5 +46,29 @@
   text-decoration-color: #070707;
 }
 #root #signInForm #noAccount:hover {
+  text-decoration-color: white;
+}
+#root #signUpForm {
+  padding: 3em;
+  background-color: #b6dcac;
+  border-radius: 5px;
+}
+#root #signUpForm form input {
+  background-color: #e4f0f6;
+}
+#root #signUpForm #signUpButton {
+  background-color: #e4f0f6;
+  color: #070707;
+}
+#root #signUpForm #signUpButton:hover {
+  background-color: rgba(111, 117, 121, 0.275);
+}
+#root #signUpForm #haveAccount {
+  display: flex;
+  justify-content: center;
+  color: #070707;
+  text-decoration-color: #070707;
+}
+#root #signUpForm #haveAccount:hover {
   text-decoration-color: white;
 }/*# sourceMappingURL=App.css.map */
