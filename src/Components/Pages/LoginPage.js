@@ -1,6 +1,6 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "../Header";
-import  Login  from "../Login";
+import Login from "../Login";
 
 const LoginPage = () => {
   return (
@@ -9,7 +9,7 @@ const LoginPage = () => {
       <Login />
       <Outlet />
     </>
-  )
+  );
 };
 
 export default LoginPage;

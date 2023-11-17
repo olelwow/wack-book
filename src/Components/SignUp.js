@@ -12,7 +12,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
 
-export default function SignIn() {
+export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -24,7 +24,7 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container id="signInForm" component="main" maxWidth="xs">
+      <Container id="signUpForm" component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
@@ -50,35 +50,40 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Användarnamn"
-              name="email"
-              autoComplete="email"
+              id="firstName"
+              label="Förnamn"
+              name="förnamn"
               autoFocus
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Lösenord"
-              type="password"
-              id="password"
-              autoComplete="current-password"
+              name="lastname"
+              label="Efternamn"
+              type="lastname"
+              id="lastName"
             />
-
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="signUpPassWord"
+              label="Lösenord"
+              name="password"
+            />
             <Button
-              id="logInButton"
+              id="signUpButton"
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Logga in
+              Registrera konto
             </Button>
 
-            <Link id="noAccount" href="SignUpPage" variant="body2">
-              {"Don't have an account? Sign Up"}
+            <Link id="haveAccount" href="/" variant="body2">
+              {"Har du redan ett konto? Logga in!"}
             </Link>
           </Box>
         </Box>
