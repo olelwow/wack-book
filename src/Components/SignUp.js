@@ -11,49 +11,54 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
-let userCount = 0;
-
-if (userCount > 0) {
-  userCount += userCount;
-} else {
-  userCount = 0;
-}
 
 let users = {};
+
 export default function SignUp() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
 
-  function validateForm() {
-    const newErrors = {};
+  //   const [errors, setErrors] = useState({});
 
-    if (!firstname) {
-      newErrors.email = "Firstname is required.";
-    }
+  //   function validateForm() {
+  //     const newErrors = {};
 
-    if (!lastname) {
-      newErrors.password = "Lastname is required.";
-    }
+  //     if (!firstname) {
+  //       newErrors.email = "Firstname is required.";
+  //     }
 
-    if (!password) {
-      newErrors.password = "Password is required.";
-    }
+  //     if (!lastname) {
+  //       newErrors.password = "Lastname is required.";
+  //     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  }
+  //     if (!password) {
+  //       newErrors.password = "Password is required.";
+  //     }
+
+  //     setErrors(newErrors);
+  //     return Object.keys(newErrors).length === 0;
+  //   }
+
+  // Fattar inte hur jag ska implementera detta ovan ^
 
   function handleSubmit(event) {
     event.preventDefault();
+
     let existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    // Ifall det finns users sen innan hämtar man dessa, annars skapas ny tom array för lagring.
 
     users = { 0: firstname, 1: lastname, 2: password };
+
     existingUsers.push(users);
     localStorage.setItem("users", JSON.stringify(existingUsers));
+    // Lagrar förnamn, efternamn samt lösenord i users, sedan läggs objektet till i existingUsers.
+    // Lagras som JSON i localStorage.
 
-    console.log(existingUsers);
+    setFirstname("");
+    setLastname("");
+    setPassword("");
+    // Tömmer input-rutorna.
   }
 
   return (
@@ -83,11 +88,9 @@ export default function SignUp() {
               label="Förnamn"
               name="firstname"
               autoFocus
+              value={firstname}
               onChange={(e) => setFirstname(e.target.value)}
             />
-            {errors.firstname && (
-              <div className="error">{errors.firstname}</div>
-            )}
             <TextField
               margin="normal"
               required
@@ -96,9 +99,9 @@ export default function SignUp() {
               label="Efternamn"
               type="lastnameInput"
               id="lastName"
+              value={lastname}
               onChange={(e) => setLastname(e.target.value)}
             />
-            {errors.lastname && <div className="error">{errors.lastname}</div>}
             <TextField
               margin="normal"
               required
@@ -107,10 +110,9 @@ export default function SignUp() {
               label="Lösenord"
               name="password"
               type="passwordInput"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {errors.password && <div className="error">{errors.password}</div>}
-
             <Button
               id="signUpButton"
               type="submit"
