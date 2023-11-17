@@ -11,6 +11,19 @@
   align-items: center;
   flex-direction: column;
 }
+#root #headerBar {
+  margin-top: 1.5em;
+  height: 8em;
+  background-color: #b6dcac;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root #headerBar h1 {
+  font-family: "Times New Roman", Times, serif;
+  color: #070707;
+  font-size: 4.5em;
+}
 #root #loggedInHeaderBar {
   margin-top: 1.5em;
   height: 8em;
@@ -35,18 +48,21 @@
 #root #loggedInHeaderBar #accountSettingsContainer #accountButton {
   margin-left: 0;
 }
-#root #headerBar {
-  margin-top: 1.5em;
-  height: 8em;
+#root #friendsContainer {
+  padding: 3em;
+  height: 55%;
+  margin-right: 2em;
+  border-radius: 5px;
+  position: fixed;
+  align-self: flex-end;
   background-color: #b6dcac;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 15em;
 }
-#root #headerBar h1 {
-  font-family: "Times New Roman", Times, serif;
-  color: #070707;
-  font-size: 4.5em;
+#root #friendsContainer .onlineStatus {
+  width: 10px;
+  aspect-ratio: 1;
+  background-color: green;
+  border-radius: 50%;
 }
 #root #signInForm {
   padding: 3em;

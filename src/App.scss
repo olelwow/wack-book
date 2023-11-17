@@ -28,6 +28,17 @@ $baseTextColor: #070707;
   @include absoluteCenterWithFlex;
   flex-direction: column;
 
+  #headerBar {
+    margin-top: 1.5em;
+    height: 8em;
+    background-color: $elementColor;
+    @include absoluteCenterWithFlex;
+
+    h1 {
+      @include textStyle($baseTextColor, 4.5em);
+    }
+  }
+
   #loggedInHeaderBar {
     margin-top: 1.5em;
     height: 8em;
@@ -52,14 +63,21 @@ $baseTextColor: #070707;
     }
   }
 
-  #headerBar {
-    margin-top: 1.5em;
-    height: 8em;
+  #friendsContainer {
+    padding: 3em;
+    height: 55%;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
     background-color: $elementColor;
-    @include absoluteCenterWithFlex;
+    top: 15em;
 
-    h1 {
-      @include textStyle($baseTextColor, 4.5em);
+    .onlineStatus {
+      width: 10px;
+      aspect-ratio: 1;
+      background-color: green;
+      border-radius: 50%;
     }
   }
 
