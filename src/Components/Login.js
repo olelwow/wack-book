@@ -72,6 +72,7 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
+              href="MainPage"
               sx={{ mt: 3, mb: 2 }}
             >
               Logga in
