@@ -38,7 +38,7 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Logga in
+            Registrera nytt konto
           </Typography>
           <Box
             component="form"
