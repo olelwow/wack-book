@@ -49,6 +49,7 @@
   text-decoration-color: white;
 }
 #root #signUpForm {
+  margin-top: 4em;
   padding: 3em;
   background-color: #b6dcac;
   border-radius: 5px;
