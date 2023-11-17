@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
-import Header from "./Components/Header";
-import  Login  from "./Component/Login";
+import Header from "../Header";
+import  Login  from "../Login";
 
 const LoginPage = () => {
   return (

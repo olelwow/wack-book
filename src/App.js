@@ -1,12 +1,12 @@
 import "./App.css";
-import HeaderBeforeLogin from "./Components/Header";
-import SignIn from "./Components/Login";
+import LoginPage from "./Components/Pages/LoginPage";
+import {Routes1} from './Routes';
 
 function App() {
   return (
     <>
-      <HeaderBeforeLogin />
-      <SignIn />
+      
+      <Routes1 />
     </>
   );
 }
