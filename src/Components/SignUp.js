@@ -14,6 +14,18 @@ const defaultTheme = createTheme();
 
 let users = {};
 
+// function validatePassword(password) {
+//   // Krav: Minst 8 tecken, minst 1 siffra, minst 1 stor bokstav
+     // ^ betyder början av strängen, Regex kommer matcha mönstret från början av strängen.
+     // $ betyder slutan av strängen, Regex kommer matcha mönstret från slutan av strängen.
+     // . betyder alla tecken i strängen, Regex kommer matcha alla tecken i strängen.
+     // * betyder 0 eller flera gånger, Regex kommer matcha 0 eller flera gånger.
+     // + betyder 1 eller flera gånger, Regex kommer matcha 1 eller flera gånger.
+     // Det här kallas för "positiv lookahead." 
+//   const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+//   return passwordRegex.test(password);
+// }
+
 export default function SignUp() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -34,7 +46,12 @@ export default function SignUp() {
 
   //     if (!password) {
   //       newErrors.password = "Password is required.";
-  //     }
+  //     }if (!password) {
+    //   newErrors.password = "Password is required.";
+    // } else if (!validatePassword(password)) {
+    //   newErrors.password =
+    //     "Password must be at least 8 characters long and contain at least 1 digit and 1 uppercase letter.";
+    // }
 
   //     setErrors(newErrors);
   //     return Object.keys(newErrors).length === 0;
