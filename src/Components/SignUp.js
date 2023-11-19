@@ -9,6 +9,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import GenerateCaesarCipher from "./CaesarCipher";
 
 const defaultTheme = createTheme();
 
@@ -29,6 +30,13 @@ export default function SignUp() {
   const [lastname, setLastname] = useState("");
   const [password, setPassword] = useState("");
 
+  const { Encrypt, Decrypt } = GenerateCaesarCipher(
+    13,
+    "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+;:,.<>?/".split("")
+    // Tar in möjliga tecken genom strängen ovan, och flyttar x antal steg
+    // beroende på skiftvärdet, i detta fall 13 steg.
+  );
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -43,10 +51,15 @@ export default function SignUp() {
       users = {
         0: firstname,
         1: lastname,
-        2: password,
+        2: Encrypt(password),
         3: firstname.toLowerCase() + "." + lastname.toLowerCase(),
         // 3 = Användarnamn = förnamn.efternamn, till lowercase för lättare hantering.
       };
+      const encrypted = Encrypt(password);
+      const decrypted = Decrypt(encrypted);
+
+      console.log(encrypted);
+      console.log(decrypted);
 
       existingUsers.push(users);
       localStorage.setItem("users", JSON.stringify(existingUsers));
