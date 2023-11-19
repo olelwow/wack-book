@@ -28,7 +28,6 @@ export default function SignUp() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [password, setPassword] = useState("");
-  //   const [errors, setErrors] = useState({});
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -40,9 +39,13 @@ export default function SignUp() {
 
     console.log(existingUsers);
 
-    if (validatePassword(password)) 
-    {
-      users = { 0: firstname, 1: lastname, 2: password };
+    if (validatePassword(password)) {
+      users = {
+        0: firstname,
+        1: lastname,
+        2: password,
+        3: firstname.toLowerCase() + "." + lastname.toLowerCase(),
+      };
 
       existingUsers.push(users);
       localStorage.setItem("users", JSON.stringify(existingUsers));
@@ -53,11 +56,7 @@ export default function SignUp() {
       setLastname("");
       setPassword("");
       // Tömmer input-rutorna.
-
-
-    }
-    else
-    {
+    } else {
       console.log("error");
     }
     // Kontrollerar lösenordet med hjälp av validatePassword, sparar endast användaren ifall lösenordet uppfyller kraven.
