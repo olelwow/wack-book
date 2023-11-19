@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import GenerateCaesarCipher from "./CaesarCipher";
 
 const defaultTheme = createTheme();
 
@@ -21,6 +22,52 @@ export default function SignIn() {
 
   let wrongPass = false;
   // Variabel som används när man skriver rätt användarnamn men fel lösenord.
+
+  const { Encrypt } = GenerateCaesarCipher(
+    13,
+    "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+;:,.<>?/".split("")
+    // Tar in möjliga tecken genom strängen ovan, och flyttar x antal steg
+    // beroende på skiftvärdet, i detta fall 13 steg.
+  );
+
+  const validateSignIn = (username, password) => {
+    try {
+      const encryptedPassword = Encrypt(password);
+      // Krypterar lösenordet så att man ska kunna jämföra med det redan krypterade lösenordet
+      // som finns sparat i objektet som vi hämtar från localStorage.
+      let i = 0;
+      let existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+      for (i; i < existingUsers.length; i++) {
+        if (
+          username === existingUsers[i][3] &&
+          encryptedPassword === existingUsers[i][2]
+        ) {
+          wrongPass = false;
+          // Söker efter matching av både username och password på deras angivna platser i objektet.
+          break;
+          // hoppar ur loopen när man hittat en matchning.
+        } else if (
+          username === existingUsers[i][3] &&
+          encryptedPassword !== existingUsers[i][2]
+        ) {
+          wrongPass = true;
+          // Sätts till true när man anger rätt username men fel password.
+        }
+      }
+      return !!(
+        username === existingUsers[i][3] &&
+        encryptedPassword === existingUsers[i][2]
+      );
+    } catch (error) {
+      console.error("Error during sign-in validation:", error);
+      setUsername("");
+      setPassword("");
+      return false;
+      // Returnerar false vid fel och fångar upp felet med catch så att sidan inte kraschar.
+    }
+  };
+  // Returnerar en bool, true ifall både lösen och username matchar, false i övriga fall.
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,7 +81,8 @@ export default function SignIn() {
       if (wrongPass === true) {
         alert("Fel lösenord!");
         setUsername(username);
-        // Sparar användarnamnet så man slipper skriva det igen.
+        // Sparar användarnamnet så man slipper skriva det igen, ifall username finns
+        // men man har angett fel lösenord.
       } else {
         alert("Användarnamnet existerar inte.");
         setUsername("");
@@ -42,41 +90,6 @@ export default function SignIn() {
       }
     }
   };
-
-  const validateSignIn = (username, password) => {
-    try {
-      let i = 0;
-      let existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-
-      for (i; i < existingUsers.length; i++) {
-        if (
-          username === existingUsers[i][3] &&
-          password === existingUsers[i][2]
-        ) {
-          wrongPass = false;
-          // Söker efter matching av både username och password på deras angivna platser i objektet.
-          break;
-          // hoppar ur loopen när man hittat en matchning.
-        } else if (
-          username === existingUsers[i][3] &&
-          password !== existingUsers[i][2]
-        ) {
-          wrongPass = true;
-          // Sätts till true när man anger rätt username men fel password.
-        }
-      }
-      return !!(
-        username === existingUsers[i][3] && password === existingUsers[i][2]
-      );
-    } catch (error) {
-      console.error("Error during sign-in validation:", error);
-      setUsername("");
-      setPassword("");
-      return false;
-      // Returnerar false vid fel och fångar upp felet med catch så att sidan inte kraschar.
-    }
-  };
-  // Returnerar en bool, true ifall allt matchar false i övriga fall.
 
   return (
     <ThemeProvider theme={defaultTheme}>
