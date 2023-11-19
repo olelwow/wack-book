@@ -45,6 +45,7 @@ export default function SignUp() {
         1: lastname,
         2: password,
         3: firstname.toLowerCase() + "." + lastname.toLowerCase(),
+        // 3 = Användarnamn = förnamn.efternamn, till lowercase för lättare hantering.
       };
 
       existingUsers.push(users);
