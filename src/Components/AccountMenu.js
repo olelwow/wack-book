@@ -9,15 +9,41 @@ import Tooltip from "@mui/material/Tooltip";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
+import LogOutAlert from "./LogOutAlert";
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function AccountMenu() {
+  const navigate = useNavigate();
+
+  const [logOutAlertOpen, setLogOutAlertOpen] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    console.log(anchorEl);
   };
   const handleClose = () => {
     setAnchorEl(null);
+    console.log(anchorEl);
   };
+
+  const GoToSettings = () => {
+    navigate("/AccountSettingsPage");
+  };
+
+  const handleLogOutAlertOpen = () => {
+    setLogOutAlertOpen(true);
+  };
+
+  const handleLogOutAlertClose = () => {
+    setLogOutAlertOpen(false);
+  };
+
+  // useState definieras här istället för i LogOutAlert komponenten, skickas vidare som 'props' när man kallar komponenten.
+
   return (
     <React.Fragment>
       <Box
@@ -73,19 +99,21 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={GoToSettings}>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
           Kontoinställningar
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleLogOutAlertOpen}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
           Logga ut
         </MenuItem>
       </Menu>
+      <LogOutAlert isOpen={logOutAlertOpen} onClose={handleLogOutAlertClose} />
+      {/* Här kan man skicka in så kallade props genom komponenten, som sedan kan användas i komponenten. */}
     </React.Fragment>
   );
 }
