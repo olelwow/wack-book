@@ -12,8 +12,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
 
-let users = {};
-
 function validatePassword(password) {
   // Krav: Minst 8 tecken, minst 1 siffra, minst 1 stor bokstav
   //  ^ betyder början av strängen, Regex kommer matcha mönstret från början av strängen.
@@ -30,34 +28,7 @@ export default function SignUp() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [password, setPassword] = useState("");
-
   //   const [errors, setErrors] = useState({});
-
-  //   function validateForm() {
-  //     const newErrors = {};
-
-  //     if (!firstname) {
-  //       newErrors.email = "Firstname is required.";
-  //     }
-
-  //     if (!lastname) {
-  //       newErrors.password = "Lastname is required.";
-  //     }
-
-  //     if (!password) {
-  //       newErrors.password = "Password is required.";
-  //     }if (!password) {
-  //   newErrors.password = "Password is required.";
-  // } else if (!validatePassword(password)) {
-  //   newErrors.password =
-  //     "Password must be at least 8 characters long and contain at least 1 digit and 1 uppercase letter.";
-  // }
-
-  //     setErrors(newErrors);
-  //     return Object.keys(newErrors).length === 0;
-  //   }
-
-  // Fattar inte hur jag ska implementera detta ovan ^
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -65,24 +36,31 @@ export default function SignUp() {
     let existingUsers = JSON.parse(localStorage.getItem("users")) || [];
     // Ifall det finns users sen innan hämtar man dessa, annars skapas ny tom array för lagring.
 
+    let users = {};
+
     console.log(existingUsers);
 
-    if (validatePassword(password)) {
+    if (validatePassword(password)) 
+    {
       users = { 0: firstname, 1: lastname, 2: password };
-    } else {
+
+      existingUsers.push(users);
+      localStorage.setItem("users", JSON.stringify(existingUsers));
+      // Lagrar förnamn, efternamn samt lösenord i users, sedan läggs objektet till i existingUsers.
+      // Lagras som JSON i localStorage.
+
+      setFirstname("");
+      setLastname("");
+      setPassword("");
+      // Tömmer input-rutorna.
+
+
+    }
+    else
+    {
       console.log("error");
     }
     // Kontrollerar lösenordet med hjälp av validatePassword, sparar endast användaren ifall lösenordet uppfyller kraven.
-
-    existingUsers.push(users);
-    localStorage.setItem("users", JSON.stringify(existingUsers));
-    // Lagrar förnamn, efternamn samt lösenord i users, sedan läggs objektet till i existingUsers.
-    // Lagras som JSON i localStorage.
-
-    setFirstname("");
-    setLastname("");
-    setPassword("");
-    // Tömmer input-rutorna.
   }
 
   return (
