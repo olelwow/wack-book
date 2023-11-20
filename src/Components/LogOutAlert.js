@@ -6,7 +6,6 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-import { useState } from "react";
 
 const LogOutAlert = (props) => {
   // Notera props    ^

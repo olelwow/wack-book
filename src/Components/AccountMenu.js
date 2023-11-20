@@ -117,3 +117,4 @@ export default function AccountMenu() {
     </React.Fragment>
   );
 }
+// Lägg till state för inloggad eller ej.
