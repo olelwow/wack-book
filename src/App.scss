@@ -78,6 +78,12 @@ $baseTextColor: #070707;
       aspect-ratio: 1;
       background-color: green;
       border-radius: 50%;
+      transition: $backgroundColor 0s;
+
+      .offline {
+        background-color:red;
+      }
+      
     }
   }
 
