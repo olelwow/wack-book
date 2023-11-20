@@ -63,6 +63,10 @@
   aspect-ratio: 1;
   background-color: green;
   border-radius: 50%;
+  transition: #e4f0f6 0s;
+}
+#root #friendsContainer .onlineStatus .offline {
+  background-color: red;
 }
 #root #signInForm {
   padding: 3em;

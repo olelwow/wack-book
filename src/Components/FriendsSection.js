@@ -5,7 +5,9 @@ import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-// Skit i det du
+import UserStatusIndicator from "./UserOnlineOfflineRandom";
+
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -27,7 +29,7 @@ export default function FriendsStack() {
         }}
       >
         <Stack spacing={3} direction="row" alignItems="center">
-          <div className="onlineStatus"></div>
+        <UserStatusIndicator />
           <Stack>
             <Avatar>JÖ</Avatar>
           </Stack>
