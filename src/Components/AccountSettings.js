@@ -24,10 +24,10 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser }) => {
       if (existingData[i][3] === loggedInUser) {
         const name = newUserName.split(".");
         user = {
-          0: name[0] + ".",
+          0: name[0],
           1: name[1],
           2: existingData[i][2],
-          3: newUserName,
+          3: newUserName.toLowerCase(),
         };
       }
     }

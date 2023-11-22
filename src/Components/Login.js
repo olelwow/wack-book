@@ -42,7 +42,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser }) {
 
       for (i; i < existingUsers.length; i++) {
         if (
-          username === existingUsers[i][3] &&
+          username.toLowerCase() === existingUsers[i][3] &&
           encryptedPassword === existingUsers[i][2]
         ) {
           console.log(existingUsers[i][3]);
