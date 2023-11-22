@@ -4,12 +4,12 @@ import CreateNewPost from "../CreatePosts";
 
 
 
-export const MainPage = () => {
+export const MainPage = ({setLoggedInUser, loggedInUser}) => {
   return (
     <>
       <HeaderAfterLogin />
       <FriendsStack />
-      <CreateNewPost />
+      <CreateNewPost setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} />
     </>
   );
 };
