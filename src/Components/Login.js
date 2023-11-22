@@ -14,44 +14,50 @@ import GenerateCaesarCipher from "./CaesarCipher";
 
 const defaultTheme = createTheme();
 
-export default function SignIn() {
+export default function SignIn({ setLoggedInUser, loggedInUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [wrongPass, setWrongPass] = useState(false);
+
   const navigate = useNavigate();
   // Setters för de olika fälten, samt navigate som styr vilken sida man hamnar på.
 
-  let wrongPass = false;
   // Variabel som används när man skriver rätt användarnamn men fel lösenord.
 
-  const { Encrypt } = GenerateCaesarCipher(
-    13,
-    "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+;:,.<>?/".split("")
-    // Tar in möjliga tecken genom strängen ovan, och flyttar x antal steg
-    // beroende på skiftvärdet, i detta fall 13 steg.
-  );
+  const ValidateSignIn = (username, password) => {
+    const { Encrypt } = GenerateCaesarCipher(
+      13,
+      "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+;:,.<>?/".split("")
+      // Tar in möjliga tecken genom strängen ovan, och flyttar x antal steg
+      // beroende på skiftvärdet, i detta fall 13 steg.
+    );
 
-  const validateSignIn = (username, password) => {
     try {
       const encryptedPassword = Encrypt(password);
       // Krypterar lösenordet så att man ska kunna jämföra med det redan krypterade lösenordet
       // som finns sparat i objektet som vi hämtar från localStorage.
       let i = 0;
       let existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+      console.log(existingUsers);
 
       for (i; i < existingUsers.length; i++) {
         if (
           username === existingUsers[i][3] &&
           encryptedPassword === existingUsers[i][2]
         ) {
-          wrongPass = false;
-          // Söker efter matching av både username och password på deras angivna platser i objektet.
+          console.log(existingUsers[i][3]);
+          setWrongPass(false);
+          // Söker efter matching av både username och password på deras angivna platser i objektet
+
           break;
           // hoppar ur loopen när man hittat en matchning.
         } else if (
           username === existingUsers[i][3] &&
           encryptedPassword !== existingUsers[i][2]
         ) {
-          wrongPass = true;
+          console.log(existingUsers[i][3]);
+          setWrongPass(true);
+
           // Sätts till true när man anger rätt username men fel password.
         }
       }
@@ -61,8 +67,6 @@ export default function SignIn() {
       );
     } catch (error) {
       console.error("Error during sign-in validation:", error);
-      setUsername("");
-      setPassword("");
       return false;
       // Returnerar false vid fel och fångar upp felet med catch så att sidan inte kraschar.
     }
@@ -72,17 +76,22 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (validateSignIn(username.toLowerCase(), password)) {
+    if (ValidateSignIn(username.toLowerCase(), password)) {
       navigate("/MainPage");
       // Navigerar till MainPage ifall man anger korrekt info
 
-      console.log("Inloggad!");
+      setLoggedInUser((prevloggedInUser) => {
+        console.log(username.toLowerCase());
+        console.log("Inloggad!");
+        return username.toLowerCase();
+      });
     } else {
       if (wrongPass === true) {
         alert("Fel lösenord!");
         setUsername(username);
         // Sparar användarnamnet så man slipper skriva det igen, ifall username finns
         // men man har angett fel lösenord.
+        // Just nu fungerar inte detta.
       } else {
         alert("Användarnamnet existerar inte.");
         setUsername("");
