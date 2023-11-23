@@ -10,6 +10,7 @@ export const MainPage = ({setLoggedInUser, loggedInUser}) => {
       <HeaderAfterLogin />
       <FriendsStack />
       <CreateNewPost setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} />
+      
     </>
   );
 };
