@@ -18,11 +18,10 @@ const NewPost = (key) =>{
             Height: '50vh',
 
         }}>
-             <Box sx={{ flexGrow: 1 }}>
+             {/* <Box sx={{ flexGrow: 1 }}>
             <TextField
             id="newTextPostField"
             aria-readonly
-            // label="Datum"
             multiline
             value={key}
             sx={{
@@ -31,7 +30,7 @@ const NewPost = (key) =>{
                 
             }}
             />
-            </Box>
+            </Box> */}
             </Box>
         </Container>
         </React.Fragment>

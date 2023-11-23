@@ -1,11 +1,14 @@
 import AccountSettings from "../AccountSettings";
 import HeaderAfterLogin from "../HeaderMainPage";
 
-const AccountSettingsPage = () => {
+const AccountSettingsPage = ({ setLoggedInUser, loggedInUser }) => {
   return (
     <>
       <HeaderAfterLogin />
-      <AccountSettings />
+      <AccountSettings
+        setLoggedInUser={setLoggedInUser}
+        loggedInUser={loggedInUser}
+      />
     </>
   );
 };

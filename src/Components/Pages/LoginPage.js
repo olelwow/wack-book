@@ -2,11 +2,11 @@ import { Outlet } from "react-router-dom";
 import Header from "../Header";
 import Login from "../Login";
 
-const LoginPage = () => {
+const LoginPage = ({ setLoggedInUser, loggedInUser }) => {
   return (
     <>
       <Header />
-      <Login />
+      <Login setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} />
       <Outlet />
     </>
   );

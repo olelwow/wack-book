@@ -70,10 +70,6 @@ $baseTextColor: #070707;
     }
   }
 
-  #accountSettingsPage {
-    
-  }
-
   #friendsContainer {
     padding: 3em;
     height: 55%;
@@ -92,9 +88,8 @@ $baseTextColor: #070707;
       transition: $backgroundColor 0s;
 
       .offline {
-        background-color:red;
+        background-color: red;
       }
-      
     }
   }
 
