@@ -1,12 +1,15 @@
-import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
+import React from "react";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Stack from '@mui/material/Stack';
 import Avatar from "@mui/material/Avatar";
 
-const FakeAddedPosts = () => {
+
+const FakeAddedPosts = ({ author, content }) => {
+  const [firstLetter, secondLetter] = author ? author.split(".").map(name => name.charAt(0).toUpperCase()) : ["", ""];
+
   return (
+
+    
     <Box
       sx={{
         left: "1em",
@@ -38,14 +41,14 @@ const FakeAddedPosts = () => {
             wordBreak: 'break-word',
             paddingLeft: "1.5em",
           }}>
-            <h4>Olle</h4>
-            <h4>Ristenstrand</h4>
+            <h4>{author}</h4>
+            
             <Stack sx={{
               display: 'flex',
               flexDirection: 'column',
               paddingRight: "2em",
             }}>
-              <Avatar alt="Profile Picture">OL</Avatar>
+              <Avatar alt="Profile Picture">{`${firstLetter} ${secondLetter}`} </Avatar>
             </Stack>
           </Box>
           <Box sx={{
@@ -56,7 +59,7 @@ const FakeAddedPosts = () => {
             wordBreak: 'break-word',
             paddingLeft: "0.5em",
           }}>
-            {"Idag blåser det massor"}
+            {content}
           </Box>
         </Box>
       </ul>
@@ -65,3 +68,5 @@ const FakeAddedPosts = () => {
 };
 
 export default FakeAddedPosts;
+
+
