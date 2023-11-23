@@ -34,6 +34,10 @@
   flex-direction: row;
   overflow: hidden;
 }
+#root #loggedInHeaderBar #wackBookTitle {
+  color: rgba(1, 52, 36, 0.6862745098);
+  font-size: xxx-large;
+}
 #root #loggedInHeaderBar h1 {
   font-family: "Times New Roman", Times, serif;
   color: #070707;
