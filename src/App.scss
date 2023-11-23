@@ -27,18 +27,20 @@ $baseTextColor: #070707;
   height: 100vh;
   @include absoluteCenterWithFlex;
   flex-direction: column;
-
+  
+  
   #headerBar {
     margin-top: 1.5em;
     height: 8em;
     background-color: $elementColor;
     @include absoluteCenterWithFlex;
-
+    
+    
     h1 {
       @include textStyle($baseTextColor, 4.5em);
     }
   }
-
+  
   #loggedInHeaderBar {
     margin-top: 1.5em;
     height: 8em;
@@ -46,6 +48,11 @@ $baseTextColor: #070707;
     @include absoluteCenterWithFlex;
     flex-direction: row;
     overflow: hidden;
+    
+    #wackBookTitle {
+      color: #013424af;
+      font-size:xxx-large      
+    }
 
     h1 {
       @include textStyle($baseTextColor, 4em);
