@@ -8,14 +8,24 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { ChangeEvent, useState } from "react";
 import NewPost from "./Post";
+import Avatar from "@mui/material/Avatar";
 
 const CreateNewPost = ({setLoggedInUser, loggedInUser}) => {
     
   const [text, setText] = useState("");
   const [createdElement, setCreatedElement] = useState([]);
-
-
+  const name = loggedInUser.split(".");
+  let firstLetter = "";
+  let secondLetter = "";
+  try {
+   firstLetter = name[0].charAt(0).toUpperCase();
+   secondLetter = name[1].charAt(0).toUpperCase();
+  } catch (error) {
+    console.log("Användare utloggad");
+  }
+  
   const handleCreateElement = () => {
+  
   
     
     setCreatedElement((createdElement) => [...createdElement,text]);
@@ -28,7 +38,11 @@ const CreateNewPost = ({setLoggedInUser, loggedInUser}) => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="sm">
+      <Container sx={{
+        maxHeight: "60vh", 
+        overflow: "auto",
+      }}
+      maxWidth="sm">
         <Box sx={{ 
             bgcolor: "#B6DCAC", 
             left: "1em", 
@@ -36,6 +50,7 @@ const CreateNewPost = ({setLoggedInUser, loggedInUser}) => {
             flexDirection: 'row', 
             alignItems: 'center',
             minHeight: '12vh', 
+            
             
             }} 
         >
@@ -94,7 +109,24 @@ const CreateNewPost = ({setLoggedInUser, loggedInUser}) => {
     
 
   }}>
-    <h4>{loggedInUser}</h4>
+    <Box sx={{
+      display: 'flex', 
+      flexDirection: 'column',  
+      alignItems: 'center', 
+      wordBreak: 'break-word',
+      paddingLeft: "1.5em",
+    }}>
+    <h4>{name[0]}</h4>
+    <h4>{name[1]}</h4>
+        <Stack sx={{
+      display: 'flex', 
+      flexDirection: 'column',
+      paddingRight: "2em",
+        }}
+      >
+          <Avatar>{firstLetter}{secondLetter}</Avatar>
+        </Stack>
+    </Box>
   <Box  sx={{ 
        bgcolor: "#e4f0f6",
        width: "51.5vh",
