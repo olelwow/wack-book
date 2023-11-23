@@ -51,16 +51,16 @@ const newPosts = [
   "Försökte skriva en bok om trådlös teknik. Det var svårt att ansluta till handlingen."
 ];
 
-const CreateNewPost = ({loggedInUser}) => {
+const CreateNewPost = ({loggedInUser}) => { //Hämtar in data för vem som är inloggad.
     
   const [text, setText] = useState("");
   const [createdElement, setCreatedElement] = useState([]);
-  const name = loggedInUser.split("."); //
+  const name = loggedInUser.split("."); //Delar variabeln vid tecknet "." och blir här en array.
   let firstLetter = "";
   let secondLetter = "";
   try { //Felmedelande om first & second letter saknar sitt värde. Skrivs ut i console.
-   firstLetter = name[0].charAt(0).toUpperCase();
-   secondLetter = name[1].charAt(0).toUpperCase();
+   firstLetter = name[0].charAt(0).toUpperCase(); //Plockar ut första bokstaven i första placeringen i arrayen.
+   secondLetter = name[1].charAt(0).toUpperCase(); //Plockar ut första bokstaven i andra placeringen i arrayen.
   } catch (error) {
     console.log("Användare utloggad");
   }
@@ -82,6 +82,7 @@ const CreateNewPost = ({loggedInUser}) => {
       <Container sx={{
         maxHeight: "60vh", 
         overflow: "auto",
+        
       }}
       maxWidth="sm">
         <Box sx={{ 
@@ -91,6 +92,7 @@ const CreateNewPost = ({loggedInUser}) => {
             flexDirection: 'row', 
             alignItems: 'center',
             minHeight: '12vh', 
+            
             
             
             }} 
@@ -131,7 +133,6 @@ const CreateNewPost = ({loggedInUser}) => {
             flexDirection: 'row', 
             alignItems: 'center',
             marginTop: '1em', 
-            WebkitFlexGrow: '1',
         }}>
         
         
