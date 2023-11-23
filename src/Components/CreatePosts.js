@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import { ChangeEvent, useState } from "react";
 import NewPost from "./Post";
 import Avatar from "@mui/material/Avatar";
+import LikeButton from "./LikeButton";
 
 const CreateNewPost = ({setLoggedInUser, loggedInUser}) => {
     
@@ -99,7 +100,7 @@ const CreateNewPost = ({setLoggedInUser, loggedInUser}) => {
         }}
         >
         {createdElement && createdElement.map((item, i) => (
-  <Box  sx={{ 
+  <Box sx={{ 
     bgcolor: "#B6DCAC", 
     display: 'flex', 
     alignItems: 'space-between',
@@ -125,6 +126,7 @@ const CreateNewPost = ({setLoggedInUser, loggedInUser}) => {
         }}
       >
           <Avatar>{firstLetter}{secondLetter}</Avatar>
+          <LikeButton />
         </Stack>
     </Box>
   <Box  sx={{ 
