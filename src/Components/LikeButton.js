@@ -13,7 +13,7 @@ function LikeButton() {
             setLiked(true);
          }}
       >
-         {likes} Likes
+         {likes} Wacks
       </button>
    </div>
     );
