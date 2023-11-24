@@ -8,7 +8,9 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
+import LikeButton from "./LikeButton";
 import FakeAddedPosts from "./FakePosts";
+
 
 
 const firstName = [
@@ -144,8 +146,9 @@ const CreateNewPost = ({loggedInUser}) => { //Hämtar in data för vem som är i
         }}
         >
         {createdElement && createdElement.map((item, i) => (
-  // Låda för inläggen vi skapar
+
   <Box  sx={{ 
+
     bgcolor: "#B6DCAC", 
     display: 'flex', 
     alignItems: 'space-between',
@@ -174,6 +177,7 @@ const CreateNewPost = ({loggedInUser}) => { //Hämtar in data för vem som är i
         }}
       >
           <Avatar>{firstLetter}{secondLetter}</Avatar>
+          <LikeButton />
         </Stack>
     </Box>
   <Box  sx={{ 

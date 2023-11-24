@@ -50,13 +50,15 @@ $baseTextColor: #070707;
     overflow: hidden;
     
     #wackBookTitle {
-      color: #013424af;
-      font-size:xxx-large      
+      @include textStyle($baseTextColor, 4em);
+      margin-left: 0.5em;
+      color: #002519af;
     }
 
     h1 {
       @include textStyle($baseTextColor, 4em);
       margin-left: 0.5em;
+      color: #002519af;
     }
 
     #accountSettingsContainer {
@@ -70,6 +72,35 @@ $baseTextColor: #070707;
     }
   }
 
+  .like-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+    
+    .like-button {
+      border: none; 
+      outline: none;
+      border-radius: 10px;
+      background-color: transparent;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      padding: 0.8px 3px;
+      border: 2px solid #333;
+   }
+   :hover {
+      color: #fff;
+      background-color: #852b2b;
+   }
+   
+   .liked {
+      color: #f45c5c;
+      border-color: #f77373;
+   }
+  }
+ 
   #friendsContainer {
     padding: 3em;
     height: 55%;

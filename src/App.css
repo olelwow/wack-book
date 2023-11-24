@@ -35,14 +35,18 @@
   overflow: hidden;
 }
 #root #loggedInHeaderBar #wackBookTitle {
-  color: rgba(1, 52, 36, 0.6862745098);
-  font-size: xxx-large;
+  font-family: "Times New Roman", Times, serif;
+  color: #070707;
+  font-size: 4em;
+  margin-left: 0.5em;
+  color: rgba(0, 37, 25, 0.6862745098);
 }
 #root #loggedInHeaderBar h1 {
   font-family: "Times New Roman", Times, serif;
   color: #070707;
   font-size: 4em;
   margin-left: 0.5em;
+  color: rgba(0, 37, 25, 0.6862745098);
 }
 #root #loggedInHeaderBar #accountSettingsContainer {
   margin-left: 0;
@@ -51,6 +55,32 @@
 }
 #root #loggedInHeaderBar #accountSettingsContainer #accountButton {
   margin-left: 0;
+}
+#root .like-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+#root .like-button-container .like-button {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 0.8px 3px;
+  border: 2px solid #333;
+}
+#root .like-button-container :hover {
+  color: #fff;
+  background-color: #852b2b;
+}
+#root .like-button-container .liked {
+  color: #f45c5c;
+  border-color: #f77373;
 }
 #root #friendsContainer {
   padding: 3em;
