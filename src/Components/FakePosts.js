@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Stack from '@mui/material/Stack';
 import Avatar from "@mui/material/Avatar";
-
+import LikeButton from "./LikeButton";
 
 const FakeAddedPosts = ({ author, content }) => {
   const [firstLetter, secondLetter] = author ? author.split(".").map(name => name.charAt(0).toUpperCase()) : ["", ""];
@@ -49,6 +49,7 @@ const FakeAddedPosts = ({ author, content }) => {
               paddingRight: "2em",
             }}>
               <Avatar alt="Profile Picture">{`${firstLetter} ${secondLetter}`} </Avatar>
+              <LikeButton />
             </Stack>
           </Box>
           <Box sx={{
