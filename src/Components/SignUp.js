@@ -138,7 +138,7 @@ export default function SignUp() {
               Registrera konto
             </Button>
 
-            <Link id="haveAccount" href="/" variant="body2">
+            <Link id="haveAccount" to="/" variant="body2">
               {"Har du redan ett konto? Logga in!"}
             </Link>
           </Box>

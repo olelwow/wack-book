@@ -82,7 +82,6 @@ const CreateNewPost = ({loggedInUser}) => { //Hämtar in data för vem som är i
       <Container sx={{
         maxHeight: "60vh", 
         overflow: "auto",
-        border: "solid",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
