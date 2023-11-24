@@ -4,6 +4,7 @@ import LoginPage from "./Components/Pages/LoginPage";
 import { SignUpPage } from "./Components/Pages/SignUpPage";
 import { MainPage } from "./Components/Pages/MainPage";
 import AccountSettingsPage from "./Components/Pages/AccountSettingsPage";
+import WackBookHome from "./Components/WackBookHome";
 
 export const Routes1 = ({ setLoggedInUser, loggedInUser }) => {
   return (
@@ -43,6 +44,18 @@ export const Routes1 = ({ setLoggedInUser, loggedInUser }) => {
               setLoggedInUser={setLoggedInUser}
               loggedInUser={loggedInUser}
             />
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <>
+              <WackBookHome />
+              <LoginPage
+                setLoggedInUser={setLoggedInUser}
+                loggedInUser={loggedInUser}
+              />
+            </>
           }
         />
       </Routes>

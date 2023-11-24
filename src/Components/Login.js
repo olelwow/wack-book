@@ -158,7 +158,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser }) {
               Logga in
             </Button>
 
-            <Link id="noAccount" href="SignUpPage" variant="body2">
+            <Link id="noAccount" to="SignUpPage" variant="body2">
               {"Don't have an account? Sign Up"}
             </Link>
           </Box>
