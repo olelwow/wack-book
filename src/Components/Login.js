@@ -100,6 +100,10 @@ export default function SignIn({ setLoggedInUser, loggedInUser }) {
     }
   };
 
+  const noAcc = () => {
+    navigate("SignUpPage");
+  };
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container id="signInForm" component="main" maxWidth="xs">
@@ -158,8 +162,13 @@ export default function SignIn({ setLoggedInUser, loggedInUser }) {
               Logga in
             </Button>
 
-            <Link id="noAccount" to="SignUpPage" variant="body2">
-              {"Don't have an account? Sign Up"}
+            <Link
+              id="noAccount"
+              onClick={noAcc}
+              variant="body2"
+              sx={{ cursor: "pointer" }}
+            >
+              {"Har du inget konto? Registrera här!"}
             </Link>
           </Box>
         </Box>

@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import GenerateCaesarCipher from "./CaesarCipher";
+import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
@@ -29,6 +30,7 @@ export default function SignUp() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const { Encrypt, Decrypt } = GenerateCaesarCipher(
     13,
@@ -75,6 +77,10 @@ export default function SignUp() {
     }
     // Kontrollerar lösenordet med hjälp av validatePassword, sparar endast användaren ifall lösenordet uppfyller kraven.
   }
+
+  const haveAcc = () => {
+    navigate("/");
+  };
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -138,7 +144,12 @@ export default function SignUp() {
               Registrera konto
             </Button>
 
-            <Link id="haveAccount" to="/" variant="body2">
+            <Link
+              id="haveAccount"
+              onClick={haveAcc}
+              variant="body2"
+              sx={{ cursor: "pointer" }}
+            >
               {"Har du redan ett konto? Logga in!"}
             </Link>
           </Box>
