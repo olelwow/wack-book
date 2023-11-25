@@ -4,7 +4,7 @@ import LoginPage from "./Components/Pages/LoginPage";
 import { SignUpPage } from "./Components/Pages/SignUpPage";
 import { MainPage } from "./Components/Pages/MainPage";
 import AccountSettingsPage from "./Components/Pages/AccountSettingsPage";
-import WackBookHome from "./Components/WackBookHome";
+import WackBookHome from "./Components/MainContent/WackBookHome";
 
 export const Routes1 = ({ setLoggedInUser, loggedInUser }) => {
   return (

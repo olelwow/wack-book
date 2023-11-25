@@ -5,9 +5,7 @@ import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-import UserStatusIndicator from "./UserOnlineOfflineRandom";
-
-
+import UserStatusIndicator from "../UserOnlineOfflineRandom";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -29,7 +27,7 @@ export default function FriendsStack() {
         }}
       >
         <Stack spacing={3} direction="row" alignItems="center">
-        <UserStatusIndicator />
+          <UserStatusIndicator />
           <Stack>
             <Avatar>JÖ</Avatar>
           </Stack>
@@ -67,6 +65,23 @@ export default function FriendsStack() {
           </Stack>
           <Stack sx={{ minWidth: 0 }}>
             <Typography noWrap>Olle Ristenstrand</Typography>
+          </Stack>
+        </Stack>
+      </Item>
+      <Item
+        sx={{
+          my: 2,
+          mx: "auto",
+          p: 2,
+        }}
+      >
+        <Stack spacing={3} direction="row" alignItems="center">
+          <div className="onlineStatus"></div>
+          <Stack>
+            <Avatar>JTG</Avatar>
+          </Stack>
+          <Stack sx={{ minWidth: 0 }}>
+            <Typography noWrap>Johnny The G</Typography>
           </Stack>
         </Stack>
       </Item>

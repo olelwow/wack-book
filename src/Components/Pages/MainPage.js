@@ -1,16 +1,16 @@
-import HeaderAfterLogin from "../HeaderMainPage";
-import FriendsStack from "../FriendsSection";
-import CreateNewPost from "../CreatePosts";
+import HeaderAfterLogin from "../MainContent/HeaderMainPage";
+import FriendsStack from "../MainContent/FriendsSection";
+import CreateNewPost from "../MainContent/CreatePosts";
 
-
-
-export const MainPage = ({setLoggedInUser, loggedInUser}) => {
+export const MainPage = ({ setLoggedInUser, loggedInUser }) => {
   return (
     <>
       <HeaderAfterLogin />
       <FriendsStack />
-      <CreateNewPost setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} />
-      
+      <CreateNewPost
+        setLoggedInUser={setLoggedInUser}
+        loggedInUser={loggedInUser}
+      />
     </>
   );
 };

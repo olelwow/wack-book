@@ -94,7 +94,11 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser }) => {
               Byt ditt lösenord
             </Button>
           </Box>
-          <Button onClick={(e) => setAlertOpen(e.target)} size="large" sx={{ color: "#070707", marginTop: "5em" }}>
+          <Button
+            onClick={(e) => setAlertOpen(e.target)}
+            size="large"
+            sx={{ color: "#070707", marginTop: "5em" }}
+          >
             Ta bort konto
           </Button>
         </Box>
@@ -108,7 +112,6 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser }) => {
         setNewPassWord={setNewPassWord}
         newUserName={newUserName}
         setNewUserName={setNewUserName}
-
       />
     </React.Fragment>
   );
