@@ -6,7 +6,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import GenerateCaesarCipher from "./CaesarCipher";
+import GenerateCaesarCipher from "../LoginAndSignUp/CaesarCipher";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

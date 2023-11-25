@@ -9,7 +9,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
-import LogOutAlert from "./LogOutAlert";
+import LogOutAlert from "../AccountSettings/LogOutAlert";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

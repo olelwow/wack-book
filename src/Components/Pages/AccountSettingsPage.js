@@ -1,5 +1,5 @@
-import AccountSettings from "../AccountSettings";
-import HeaderAfterLogin from "../HeaderMainPage";
+import AccountSettings from "../AccountSettings/AccountSettings";
+import HeaderAfterLogin from "../MainContent/HeaderMainPage";
 
 const AccountSettingsPage = ({ setLoggedInUser, loggedInUser }) => {
   return (
