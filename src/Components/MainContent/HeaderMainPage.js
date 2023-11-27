@@ -5,14 +5,17 @@ import WackBookHome from "./WackBookHome";
 import DarkMode from "./DarkMode";
 import DarkModeButton from "./DarkModeButton";
 
-const HeaderAfterLogin = () => {
+const HeaderAfterLogin = ({isAuthenticated, setIsAuthenticated}) => {
+
   return (
     <AppBar id="loggedInHeaderBar">
       <DarkMode>
       <DarkModeButton />
       </DarkMode>
       <WackBookHome />
-      <AccountMenu />
+
+      <AccountMenu isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}/>
     </AppBar>
   );
 };

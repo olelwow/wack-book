@@ -6,7 +6,7 @@ import { MainPage } from "./Components/Pages/MainPage";
 import AccountSettingsPage from "./Components/Pages/AccountSettingsPage";
 import WackBookHome from "./Components/MainContent/WackBookHome";
 
-export const Routes1 = ({ setLoggedInUser, loggedInUser }) => {
+export const Routes1 = ({ setLoggedInUser, loggedInUser, isAuthenticated, setIsAuthenticated }) => {
   return (
     <Router>
       <Routes>
@@ -16,6 +16,9 @@ export const Routes1 = ({ setLoggedInUser, loggedInUser }) => {
             <LoginPage
               setLoggedInUser={setLoggedInUser}
               loggedInUser={loggedInUser}
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+              /*{Alla useStates som behövs på de olika sidorna skickas med här.}*/
             />
           }
         />
@@ -30,20 +33,34 @@ export const Routes1 = ({ setLoggedInUser, loggedInUser }) => {
         />
         <Route
           path="MainPage"
-          element={
+          element={ isAuthenticated? (
             <MainPage
               setLoggedInUser={setLoggedInUser}
               loggedInUser={loggedInUser}
-            />
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />) : (<LoginPage
+              setLoggedInUser={setLoggedInUser}
+              loggedInUser={loggedInUser}
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />)
           }
         />
         <Route
           path="AccountSettingsPage"
-          element={
+          element={ isAuthenticated? (
             <AccountSettingsPage
               setLoggedInUser={setLoggedInUser}
               loggedInUser={loggedInUser}
-            />
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            /> ) : (<LoginPage
+              setLoggedInUser={setLoggedInUser}
+              loggedInUser={loggedInUser}
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />)
           }
         />
         <Route
@@ -52,9 +69,11 @@ export const Routes1 = ({ setLoggedInUser, loggedInUser }) => {
             <>
               <WackBookHome />
               <LoginPage
-                setLoggedInUser={setLoggedInUser}
-                loggedInUser={loggedInUser}
-              />
+              setLoggedInUser={setLoggedInUser}
+              loggedInUser={loggedInUser}
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
             </>
           }
         />
