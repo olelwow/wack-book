@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import FlutterDashOutlinedIcon from '@mui/icons-material/FlutterDashOutlined';
 
 function LikeButton() {
     const [likes, setLikes] = useState(0);
@@ -13,7 +13,7 @@ function LikeButton() {
             setLiked(true);
          }}
       >
-         {likes} Wacks
+         {<FlutterDashOutlinedIcon fontSize='small'/>} {likes} Wacks
       </button>
    </div>
     );

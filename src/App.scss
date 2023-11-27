@@ -38,6 +38,7 @@ $baseTextColor: #070707;
     
     h1 {
       @include textStyle($baseTextColor, 4.5em);
+      color: #002519af;
     }
   }
   
@@ -50,12 +51,6 @@ $baseTextColor: #070707;
     overflow: hidden;
     
     #wackBookTitle {
-      @include textStyle($baseTextColor, 4em);
-      margin-left: 0.5em;
-      color: #002519af;
-    }
-
-    h1 {
       @include textStyle($baseTextColor, 4em);
       margin-left: 0.5em;
       color: #002519af;

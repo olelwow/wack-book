@@ -18,6 +18,7 @@ export const Routes1 = ({ setLoggedInUser, loggedInUser, isAuthenticated, setIsA
               loggedInUser={loggedInUser}
               isAuthenticated={isAuthenticated}
               setIsAuthenticated={setIsAuthenticated}
+              /*{Alla useStates som behövs på de olika sidorna skickas med här.}*/
             />
           }
         />
