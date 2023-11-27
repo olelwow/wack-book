@@ -36,8 +36,9 @@ $baseTextColor: #070707;
     @include absoluteCenterWithFlex;
     
     
-    h1 {
-      @include textStyle($baseTextColor, 4.5em);
+    #wackBookTitle {
+      @include textStyle($baseTextColor, 4em);
+      
       color: #002519af;
     }
   }

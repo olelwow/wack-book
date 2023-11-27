@@ -1,10 +1,13 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
+import { Button } from "@mui/material";
 
 const HeaderBeforeLogin = () => {
   return (
     <AppBar id="headerBar">
-      <h1>WackBook</h1>
+      <Button id='wackBookTitle' >
+        WackBook
+        </Button>
     </AppBar>
   );
 };
