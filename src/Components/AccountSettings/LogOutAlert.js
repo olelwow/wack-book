@@ -7,26 +7,26 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 
-const LogOutAlert = (props) => {
-  // Notera props    ^
+
+const LogOutAlert = ({isOpen, onClose, setIsAuthenticated, isAuthenticated}) => {
+ 
   const navigate = useNavigate();
 
   const handleAlertClose = () => {
-    props.onClose();
+    onClose();
   };
 
   const LogOutConfirm = () => {
-    props.onClose();
+    
+    setIsAuthenticated(false);
+    onClose();
     navigate("/");
   };
 
   return (
     <Dialog
-      open={props.isOpen}
-      onClose={props.onClose}
-      {
-        /* Open och close styrs av props som kommer in via AccountMenu.js */ ...{}
-      }
+      open={isOpen}
+      onClose={onClose}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >

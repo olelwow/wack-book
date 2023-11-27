@@ -3,14 +3,14 @@ import AppBar from "@mui/material/AppBar";
 import AccountMenu from "./AccountMenu";
 import WackBookHome from "./WackBookHome";
 
+const HeaderAfterLogin = ({isAuthenticated, setIsAuthenticated}) => {
 
-
-const HeaderAfterLogin = () => {
   return (
     <AppBar id="loggedInHeaderBar">
       <WackBookHome />
       {/* <h1>WackBook</h1> */}
-      <AccountMenu />
+      <AccountMenu isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}/>
     </AppBar>
   );
 };

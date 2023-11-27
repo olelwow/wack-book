@@ -14,7 +14,7 @@ import GenerateCaesarCipher from "./CaesarCipher";
 
 const defaultTheme = createTheme();
 
-export default function SignIn({ setLoggedInUser, loggedInUser }) {
+export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated, setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [wrongPass, setWrongPass] = useState(false);
@@ -83,6 +83,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser }) {
       setLoggedInUser((prevloggedInUser) => {
         console.log(username.toLowerCase());
         console.log("Inloggad!");
+        setIsAuthenticated(true);
         return username.toLowerCase();
       });
     } else {

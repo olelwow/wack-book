@@ -19,6 +19,8 @@ export default function FormDialog({
   setNewPassWord,
   newUserName,
   setNewUserName,
+  setIsAuthenticated,
+  isAuthenticated
 }) {
   const defaultUSNMessage = `Du är påväg att ändra ditt användarnamn... Skriv in ditt lösenord för att fortsätta.`;
   const defaultPWMessage = `Du är påväg att ändra ditt lösenord... Skriv in ditt gamla lösenord för att fortsätta.`;
@@ -140,6 +142,7 @@ export default function FormDialog({
       ) {
         existingData.splice(i, 1);
         localStorage.setItem("users", JSON.stringify(existingData));
+        setIsAuthenticated(false);
         navigate("/");
         break;
       } else {

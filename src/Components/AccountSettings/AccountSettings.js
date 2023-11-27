@@ -11,7 +11,7 @@ import FormDialog from "./ChangePwOrUsnDialog";
 
 import { useState } from "react";
 
-const AccountSettings = ({ setLoggedInUser, loggedInUser }) => {
+const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, isAuthenticated }) => {
   const [newUserName, setNewUserName] = useState("");
   const [newPassWord, setNewPassWord] = useState("");
   const [alertOpen, setAlertOpen] = useState(false);
@@ -112,6 +112,8 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser }) => {
         setNewPassWord={setNewPassWord}
         newUserName={newUserName}
         setNewUserName={setNewUserName}
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
       />
     </React.Fragment>
   );
