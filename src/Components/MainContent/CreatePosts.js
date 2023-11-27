@@ -10,6 +10,7 @@ import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import LikeButton from "./LikeButton";
 import FakeAddedPosts from "./FakePosts";
+import { useTranslation } from 'react-i18next'
 
 const firstName = [
   "Johnny.",
@@ -53,6 +54,7 @@ const newPosts = [
 const CreateNewPost = ({ loggedInUser }) => {
   //Hämtar in data för vem som är inloggad.
 
+  const { t } = useTranslation();
   const [text, setText] = useState("");
   const [createdElement, setCreatedElement] = useState([]);
   const name = loggedInUser.split("."); //Delar variabeln vid tecknet "." och blir här en array.
@@ -99,10 +101,10 @@ const CreateNewPost = ({ loggedInUser }) => {
           }}
         >
           {/* Ruta där vi skriver in texten för inlägget */}
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1,  }}>
             <TextField
               id="newTextPostField"
-              label="Skapa Inlägg"
+              label={t("Skapa Inlägg")}
               multiline
               required
               value={text}
@@ -121,7 +123,7 @@ const CreateNewPost = ({ loggedInUser }) => {
               endIcon={<SendIcon />}
               sx={{
                 width: "56vh",
-                left: "1em",
+                marginLeft: "4em",  
               }}
             >
               Send
