@@ -114,10 +114,11 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
         setNewUserName={setNewUserName}
         isAuthenticated={isAuthenticated}
         setIsAuthenticated={setIsAuthenticated}
+        /* En jävla massa skit ovan */
       />
     </React.Fragment>
   );
 };
 
 export default AccountSettings;
-// Skapa separat fil för funktion som sköter inloggning.
+

@@ -21,6 +21,7 @@ const LogOutAlert = ({isOpen, onClose, setIsAuthenticated, isAuthenticated}) => 
     setIsAuthenticated(false);
     onClose();
     navigate("/");
+    // Sätter auth till false, sedan stängs dialogrutan och man skickas till förstasidan.
   };
 
   return (
