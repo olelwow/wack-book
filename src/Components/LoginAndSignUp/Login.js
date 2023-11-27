@@ -78,21 +78,23 @@ export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated,
 
     if (ValidateSignIn(username.toLowerCase(), password)) {
       navigate("/MainPage");
-      // Navigerar till MainPage ifall man anger korrekt info
+      setIsAuthenticated(true);
+      // Navigerar till MainPage och sätter authenticated till true
+      // ifall man anger korrekt info
 
       setLoggedInUser((prevloggedInUser) => {
         console.log(username.toLowerCase());
         console.log("Inloggad!");
-        setIsAuthenticated(true);
         return username.toLowerCase();
       });
+      // Sätter loggedInUser till användarnamnet man loggade in med.
     } else {
       if (wrongPass === true) {
         alert("Fel lösenord!");
         setUsername(username);
         // Sparar användarnamnet så man slipper skriva det igen, ifall username finns
         // men man har angett fel lösenord.
-        // Just nu fungerar inte detta.
+       
       } else {
         alert("Användarnamnet existerar inte.");
         setUsername("");
@@ -104,6 +106,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated,
   const noAcc = () => {
     navigate("SignUpPage");
   };
+  // Navigerar till signUpPage ifall man klickar på länken.
 
   return (
     <ThemeProvider theme={defaultTheme}>
