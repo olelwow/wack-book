@@ -4,6 +4,7 @@ import AccountMenu from "./AccountMenu";
 import WackBookHome from "./WackBookHome";
 
 const HeaderAfterLogin = ({isAuthenticated, setIsAuthenticated}) => {
+
   return (
     <AppBar id="loggedInHeaderBar">
       <WackBookHome />
