@@ -101,6 +101,9 @@
   background-color: #b6dcac;
   border-radius: 5px;
 }
+#root #signInForm #signInError {
+  text-align: center;
+}
 #root #signInForm form input {
   background-color: #e4f0f6;
 }
@@ -125,6 +128,9 @@
   padding: 3em;
   background-color: #b6dcac;
   border-radius: 5px;
+}
+#root #signUpForm p {
+  text-align: center;
 }
 #root #signUpForm form input {
   background-color: #e4f0f6;
