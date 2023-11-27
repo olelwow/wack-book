@@ -4,9 +4,10 @@ import { useState } from "react";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   return (
-    <Routes1 setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} />
+    <Routes1 setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} isAuthenticated={isAuthenticated} setIsAuthenticated ={setIsAuthenticated} />
   );
 }
 

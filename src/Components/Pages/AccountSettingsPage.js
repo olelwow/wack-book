@@ -1,13 +1,16 @@
 import AccountSettings from "../AccountSettings/AccountSettings";
 import HeaderAfterLogin from "../MainContent/HeaderMainPage";
 
-const AccountSettingsPage = ({ setLoggedInUser, loggedInUser }) => {
+const AccountSettingsPage = ({ setLoggedInUser, loggedInUser, isAuthenticated, setIsAuthenticated }) => {
   return (
     <>
-      <HeaderAfterLogin />
+      <HeaderAfterLogin isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}/>
       <AccountSettings
         setLoggedInUser={setLoggedInUser}
         loggedInUser={loggedInUser}
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
       />
     </>
   );
