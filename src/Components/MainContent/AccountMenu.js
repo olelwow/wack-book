@@ -14,7 +14,7 @@ import LogOutAlert from "../AccountSettings/LogOutAlert";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function AccountMenu() {
+export default function AccountMenu({isAuthenticated, setIsAuthenticated}) {
   const navigate = useNavigate();
 
   const [logOutAlertOpen, setLogOutAlertOpen] = useState(false);
@@ -112,7 +112,7 @@ export default function AccountMenu() {
           Logga ut
         </MenuItem>
       </Menu>
-      <LogOutAlert isOpen={logOutAlertOpen} onClose={handleLogOutAlertClose} />
+      <LogOutAlert isOpen={logOutAlertOpen} onClose={handleLogOutAlertClose} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
       {/* Här kan man skicka in så kallade props genom komponenten, som sedan kan användas i komponenten. */}
     </React.Fragment>
   );
