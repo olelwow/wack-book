@@ -23,6 +23,7 @@
   font-family: "Times New Roman", Times, serif;
   color: #070707;
   font-size: 4.5em;
+  color: rgba(0, 37, 25, 0.6862745098);
 }
 #root #loggedInHeaderBar {
   margin-top: 1.5em;
@@ -35,13 +36,6 @@
   overflow: hidden;
 }
 #root #loggedInHeaderBar #wackBookTitle {
-  font-family: "Times New Roman", Times, serif;
-  color: #070707;
-  font-size: 4em;
-  margin-left: 0.5em;
-  color: rgba(0, 37, 25, 0.6862745098);
-}
-#root #loggedInHeaderBar h1 {
   font-family: "Times New Roman", Times, serif;
   color: #070707;
   font-size: 4em;
