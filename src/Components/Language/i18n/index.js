@@ -6,7 +6,7 @@ import translationsInEnglish from "../en/translation.json";
 
 // Översättningen
 const resources = {
-    swe: {
+    sv: {
         translation: translationsInSwedish
     },
     en: {
@@ -18,7 +18,7 @@ i18n
 .use(initReactI18next) // passes i18n down to react-i1
 .init({
     resources,
-    lng: "swe", //standard språket.
+    lng: "sv", //standard språket.
     debug: true,
     fallbackLng: "en", //Används om standard språket inte fungerar.
     interpolation: {

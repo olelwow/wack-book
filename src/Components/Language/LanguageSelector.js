@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
 
 const LanguageSelector = () => {
 
@@ -19,10 +20,11 @@ const LanguageSelector = () => {
     return (
         <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Language</InputLabel>
-        <Select defaultValue={selectedLanguage} onChange={chooseLanguage}>
-            <option value="swe">Svenska</option>
-            <option value="en">Engelska</option>
+        <InputLabel sx={{  }} id="demo-simple-select-label">Language</InputLabel>
+        <Select defaultValue={selectedLanguage} onChange={(e) => chooseLanguage}>
+
+            <MenuItem value="sv">Svenska</MenuItem>
+            <MenuItem value="en">Engelska</MenuItem>
         </Select>
       </FormControl>
     </Box>
