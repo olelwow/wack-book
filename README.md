@@ -1,3 +1,13 @@
+WackBook Readme
+
+Skapa ett konto för att kunna logga in.
+
+Logga in med förnamn.efternamn, t.ex Olle.Ristenstrand ifall du angav Olle som förnamn och Ristenstrand som efternamn vid registrering.
+
+När du är inloggad kan du skapa inlägg och wacka inlägg. I AccountSettings menyn kan du ändra användarnamn samt lösenord, eller ta bort ditt konto helt. Du kan även logga ut via menyn.
+
+That's all folks!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

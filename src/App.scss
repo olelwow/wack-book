@@ -27,22 +27,20 @@ $baseTextColor: #070707;
   height: 100vh;
   @include absoluteCenterWithFlex;
   flex-direction: column;
-  
-  
+
   #headerBar {
     margin-top: 1.5em;
     height: 8em;
     background-color: $elementColor;
     @include absoluteCenterWithFlex;
-    
-    
+
     #wackBookTitle {
       @include textStyle($baseTextColor, 4em);
-      
+
       color: #002519af;
     }
   }
-  
+
   #loggedInHeaderBar {
     margin-top: 1.5em;
     height: 8em;
@@ -50,7 +48,7 @@ $baseTextColor: #070707;
     @include absoluteCenterWithFlex;
     flex-direction: row;
     overflow: hidden;
-    
+
     #wackBookTitle {
       @include textStyle($baseTextColor, 4em);
       margin-left: 0.5em;
@@ -72,9 +70,9 @@ $baseTextColor: #070707;
     display: flex;
     justify-content: center;
     margin-top: 4px;
-    
+
     .like-button {
-      border: none; 
+      border: none;
       outline: none;
       border-radius: 10px;
       background-color: transparent;
@@ -85,18 +83,18 @@ $baseTextColor: #070707;
       transition: all 0.2s ease-in-out;
       padding: 0.8px 3px;
       border: 2px solid #333;
-   }
-   :hover {
+    }
+    :hover {
       color: #fff;
       background-color: #852b2b;
-   }
-   
-   .liked {
+    }
+
+    .liked {
       color: #f45c5c;
       border-color: #f77373;
-   }
+    }
   }
- 
+
   #friendsContainer {
     padding: 3em;
     height: 55%;
@@ -124,6 +122,10 @@ $baseTextColor: #070707;
     padding: 3em;
     background-color: $elementColor;
     border-radius: 5px;
+
+    #signInError {
+      text-align: center;
+    }
 
     form input {
       background-color: $backgroundColor;
@@ -155,6 +157,10 @@ $baseTextColor: #070707;
     padding: 3em;
     background-color: $elementColor;
     border-radius: 5px;
+
+    p {
+      text-align: center;
+    }
 
     form input {
       background-color: $backgroundColor;

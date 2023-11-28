@@ -30,6 +30,7 @@ export default function SignUp() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const { Encrypt, Decrypt } = GenerateCaesarCipher(
@@ -59,7 +60,7 @@ export default function SignUp() {
       };
       const encrypted = Encrypt(password);
       const decrypted = Decrypt(encrypted);
-
+      setErrorMessage("");
       console.log(encrypted);
       console.log(decrypted);
 
@@ -73,7 +74,9 @@ export default function SignUp() {
       setPassword("");
       // Tömmer input-rutorna.
     } else {
-      console.log("error");
+      setErrorMessage(
+        "Ditt lösenord måste vara 8 tecken långt, innehålla stor bokstav samt en siffra."
+      );
     }
     // Kontrollerar lösenordet med hjälp av validatePassword, sparar endast användaren ifall lösenordet uppfyller kraven.
   }
@@ -134,6 +137,7 @@ export default function SignUp() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            <p id="signInError">{errorMessage}</p>
             <Button
               id="signUpButton"
               type="submit"
