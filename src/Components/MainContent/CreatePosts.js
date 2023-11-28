@@ -10,7 +10,7 @@ import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import LikeButton from "./LikeButton";
 import FakeAddedPosts from "./FakePosts";
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
 const firstName = [
   "Johnny.",
@@ -27,16 +27,16 @@ const firstName = [
 ];
 const lastName = [
   "Bravo",
-  "Albin",
-  "Leo",
+  "Ahl",
+  "Leosson",
   "Olsson",
-  "Jens",
+  "Alsing",
   "Berger",
-  "Kevin",
-  "Lloyd",
-  "Nos",
-  "Linus",
-  "Kalle",
+  "Drake",
+  "B",
+  "Fors",
+  "Jobs",
+  "Käck",
 ];
 const newPosts = [
   "Isbjörnar alltså WOW!",
@@ -71,13 +71,12 @@ const CreateNewPost = ({ loggedInUser }) => {
   const handleCreateElement = () => {
     // Pilfunktion tar in "createdElement" som parameter och
     // returnerar en ny array som är en kopia av den befintliga array'en.
-    if (text.trim() !== ""){
+    if (text.trim() !== "") {
       setCreatedElement((createdElement) => [...createdElement, text]);
-    setText(""); //Inläggsrutan blir tom efter vi postat
+      setText(""); //Inläggsrutan blir tom efter vi postat
     } else {
       console.log("Textfältet får inte vara tomt!");
     }
-    
   };
 
   return (
@@ -108,7 +107,7 @@ const CreateNewPost = ({ loggedInUser }) => {
           }}
         >
           {/* Ruta där vi skriver in texten för inlägget */}
-          <Box sx={{ flexGrow: 1,  }}>
+          <Box sx={{ flexGrow: 1 }}>
             <TextField
               id="newTextPostField"
               label={t("Skapa Inlägg")}
@@ -129,8 +128,10 @@ const CreateNewPost = ({ loggedInUser }) => {
               variant="contained"
               endIcon={<SendIcon />}
               sx={{
+
                 width: "48vh",
                 marginLeft: "4em",  
+
               }}
             >
               Send
