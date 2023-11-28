@@ -186,3 +186,73 @@ $baseTextColor: #070707;
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  body {
+    max-width: 97%;
+  }
+  #createPostContainer {
+    padding-top: 3%;
+
+    #createPostBox {
+      width: 106%;
+    }
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    // max-width: 97%;
+  }
+  #createPostContainer {
+    padding-top: 3%;
+
+    #createPostBox {
+      width: 106%;
+    }
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    // max-width: 97%;
+  }
+  #createPostContainer {
+    padding-top: 3%;
+
+    #createPostBox {
+      width: 106%;
+    }
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  body {
+    // max-width: 97%;
+  }
+  #createPostContainer {
+    padding-top: 3%;
+
+    #createPostBox {
+      width: 106%;
+    }
+  }
+}
+@media screen and (min-width: 1201px) {
+  body {
+    
+  }
+  #createPostContainer {
+    padding-top: 3%;
+
+    #createPostBox {
+      width: 106%;
+    }
+  }
+  #PostIdName{
+    // text-align: ;
+  }
+}
+
+// 320px — 480px: Mobile devices.
+//     481px — 768px: iPads, Tablets.
+//     769px — 1024px: Small screens, laptops.
+//     1025px — 1200px: Desktops, large screens.
+//     1201px and more — Extra large screens, TV.
