@@ -29,12 +29,12 @@ const lastName = [
   "Bravo",
   "Albin",
   "Leo",
-  "Olle",
+  "Olsson",
   "Jens",
-  "Filip",
+  "Berger",
   "Kevin",
   "Lloyd",
-  "Sam",
+  "Nos",
   "Linus",
   "Kalle",
 ];
@@ -71,8 +71,13 @@ const CreateNewPost = ({ loggedInUser }) => {
   const handleCreateElement = () => {
     // Pilfunktion tar in "createdElement" som parameter och
     // returnerar en ny array som är en kopia av den befintliga array'en.
-    setCreatedElement((createdElement) => [...createdElement, text]);
+    if (text.trim() !== ""){
+      setCreatedElement((createdElement) => [...createdElement, text]);
     setText(""); //Inläggsrutan blir tom efter vi postat
+    } else {
+      console.log("Textfältet får inte vara tomt!");
+    }
+    
   };
 
   return (
