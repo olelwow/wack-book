@@ -83,18 +83,19 @@ const CreateNewPost = ({ loggedInUser }) => {
     <React.Fragment>
       <CssBaseline />
       {/* Yttre lådan med alla inlägg och ruta för skapa inlägg */}
-      <Container
+      <Container id="createPostContainer"
         sx={{
-          maxHeight: "60vh",
+          maxHeight: "69vh",
           overflow: "auto",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          overflowX: "hidden",
         }}
         maxWidth="sm"
       >
         {/* Låda för skapa inlägg */}
-        <Box
+        <Box id="createPostBox"
           sx={{
             bgcolor: "#B6DCAC",
             display: "flex",
@@ -102,6 +103,7 @@ const CreateNewPost = ({ loggedInUser }) => {
             alignItems: "center",
             minHeight: "12vh",
             width: "100%",
+            
           }}
         >
           {/* Ruta där vi skriver in texten för inlägget */}
@@ -126,8 +128,10 @@ const CreateNewPost = ({ loggedInUser }) => {
               variant="contained"
               endIcon={<SendIcon />}
               sx={{
-                width: "56vh",
-                marginLeft: "4em",
+
+                width: "48vh",
+                marginLeft: "4em",  
+
               }}
             >
               Send
@@ -159,7 +163,7 @@ const CreateNewPost = ({ loggedInUser }) => {
                     padding: "0.5em",
                     marginTop: "0.5em",
                     minHeight: "12vh",
-                    width: "100%",
+                    width: "37em",
                   }}
                 >
                   {/* Låda för namn, avatar */}
@@ -169,17 +173,17 @@ const CreateNewPost = ({ loggedInUser }) => {
                       flexDirection: "column",
                       alignItems: "center",
                       wordBreak: "break-word",
-                      paddingLeft: "1.5em",
+                      paddingLeft: "0.7em",
                     }}
                   >
                     {/* Skriver ut för och efternamn i inläggsrutan */}
-                    <h4>{name[0]}</h4>
-                    <h4>{name[1]}</h4>
+                    <h4>{name[0]} {name[1]}</h4>
                     <Stack
                       sx={{
                         display: "flex",
                         flexDirection: "column",
                         paddingRight: "2em",
+                        alignItems: "center",
                       }}
                     >
                       <Avatar>

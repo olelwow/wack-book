@@ -150,4 +150,48 @@
 }
 #root #signUpForm #haveAccount:hover {
   text-decoration-color: white;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    max-width: 97%;
+  }
+  #createPostContainer {
+    padding-top: 3%;
+  }
+  #createPostContainer #createPostBox {
+    width: 106%;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #createPostContainer {
+    padding-top: 3%;
+  }
+  #createPostContainer #createPostBox {
+    width: 106%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #createPostContainer {
+    padding-top: 3%;
+  }
+  #createPostContainer #createPostBox {
+    width: 106%;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  #createPostContainer {
+    padding-top: 3%;
+  }
+  #createPostContainer #createPostBox {
+    width: 106%;
+  }
+}
+@media screen and (min-width: 1201px) {
+  #createPostContainer {
+    padding-top: 3%;
+  }
+  #createPostContainer #createPostBox {
+    width: 106%;
+  }
 }/*# sourceMappingURL=App.css.map */

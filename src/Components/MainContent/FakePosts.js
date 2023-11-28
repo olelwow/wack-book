@@ -34,6 +34,7 @@ const FakeAddedPosts = ({ author, content }) => {
             padding: "0.5em",
             marginTop: "0.5em",
             minHeight: "12vh",
+            width: "37em"
           }}
         >
           <Box
@@ -42,16 +43,21 @@ const FakeAddedPosts = ({ author, content }) => {
               flexDirection: "column",
               alignItems: "center",
               wordBreak: "break-word",
-              paddingLeft: "1.5em",
+              
             }}
           >
-            <h4>{author}</h4>
+            <h4 id="PostIdName" style={{
+              display: "flex",
+              alignContent: "center",
+            }}>{author}</h4>
 
             <Stack
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                paddingRight: "2em",
+                alignItems: "center",
+                width: "8em",
+                // paddingRight: "2em",
               }}
             >
               <Avatar alt="Profile Picture">
