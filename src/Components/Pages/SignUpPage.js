@@ -6,6 +6,7 @@ export const SignUpPage = () => {
     <>
       <Header />
       <SignUp />
+      <p className="version">Senast uppdaterad: 29/11/2023</p>
     </>
   );
 };

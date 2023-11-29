@@ -186,6 +186,12 @@
 #root #signUpForm #haveAccount:hover {
   text-decoration-color: white;
 }
+#root .version {
+  position: fixed;
+  margin-left: 1em;
+  bottom: 0;
+  left: 0;
+}
 
 .dark_mode {
   margin-top: -20px;
@@ -272,7 +278,10 @@
     padding-top: 0em;
     padding-left: 1em;
   }
-  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+  #root #friendsListBoxOne,
+  #friendsListBoxTwo,
+  #friendsListBoxThree,
+  #friendsListBoxFour {
     display: flex;
     justify-content: space-between;
     margin-left: 0.2em;
@@ -311,7 +320,10 @@
     padding-top: 0em;
     padding-left: 1em;
   }
-  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+  #root #friendsListBoxOne,
+  #friendsListBoxTwo,
+  #friendsListBoxThree,
+  #friendsListBoxFour {
     display: flex;
     justify-content: space-between;
     margin-left: 0.2em;
@@ -349,13 +361,19 @@
     top: auto;
     padding-top: 0em;
   }
-  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+  #root #friendsListBoxOne,
+  #friendsListBoxTwo,
+  #friendsListBoxThree,
+  #friendsListBoxFour {
     display: flex;
     justify-content: space-between;
     margin-left: 0.2em;
     width: clamp(1em, 28vw + 5.5em, 17em);
   }
-  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+  #root #friendsListBoxOne,
+  #friendsListBoxTwo,
+  #friendsListBoxThree,
+  #friendsListBoxFour {
     display: flex;
     justify-content: space-between;
     margin-left: 0.2em;

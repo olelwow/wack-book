@@ -232,6 +232,12 @@ $baseTextColor: #070707;
       }
     }
   }
+  .version {
+    position: fixed;
+    margin-left: 1em;
+    bottom: 0;
+    left: 0;
+  }
 }
 .dark_mode {
   margin-top: -20px;
@@ -489,8 +495,6 @@ $baseTextColor: #070707;
   }
 }
 @media screen and (min-width: 1201px) {
-
-
   #friendsContainer {
     width: clamp(12em, 15vw + 5.6em, 40em);
   }
