@@ -186,11 +186,53 @@ $baseTextColor: #070707;
     }
   }
 }
-
+//Mobiltelefoner
 @media screen and (max-width: 480px) {
-  body {
-    max-width: 97%;
+  
+  #root > #friendsContainer{
+    // width: clamp(1em, 28vw + 5.5em, 11em);
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: $elementColor;
+    // top: 15em;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top:auto;
+    padding-top: 0em;
+    padding-left: 1em;
+
   }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em,20vw + 1.0em, 17em);
+  }
+
+  #root  #JÖ, #RB, #OR, #JTG{
+    
+    }
+    #root .onlineStatus{
+      margin-left: -1em;
+      
+    }
+    #root .AvatarBox{
+      margin-left: 0.2em;
+      
+    }
+    #root .TypographyText{
+      // font-size: clamp(1em, 1vw+1em, 1.0em);
+      margin-left: -1em;
+      
+    }
+    
+  
   #createPostContainer {
     padding-top: 3%;
 
@@ -199,10 +241,52 @@ $baseTextColor: #070707;
     }
   }
 }
+//Padda/större telefoner
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  body {
-    // max-width: 97%;
+  #root > #friendsContainer{
+    // width: clamp(1em, 28vw + 5.5em, 11em);
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: $elementColor;
+    // top: 15em;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top:auto;
+    padding-top: 0em;
+    padding-left: 1em;
+
   }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em,20vw + 1.0em, 17em);
+  }
+
+  #root  #JÖ, #RB, #OR, #JTG{
+    
+    }
+    #root .onlineStatus{
+      margin-left: -1em;
+      
+    }
+    #root .AvatarBox{
+      margin-left: 0.2em;
+      
+    }
+    #root .TypographyText{
+      // font-size: clamp(1em, 1vw+1em, 1.0em);
+      margin-left: -1em;
+      
+    }
+    
+  
   #createPostContainer {
     padding-top: 3%;
 
@@ -211,10 +295,56 @@ $baseTextColor: #070707;
     }
   }
 }
+//Laptop och skärmar
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  body {
-    // max-width: 97%;
+  #root > #friendsContainer{
+    // width: clamp(1em, 28vw + 5.5em, 11em);
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: $elementColor;
+    // top: 15em;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top:auto;
+    padding-top: 0em;
+
   }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(1em,28vw + 5.5em, 17em);
+  }
+
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em,20vw + 1.0em, 17em);
+  }
+
+  #root  #JÖ, #RB, #OR, #JTG{
+    
+    }
+    #root .onlineStatus{
+      margin-left: -1em;
+      
+    }
+    #root .AvatarBox{
+      margin-left: 0.2em;
+      
+    }
+    #root .TypographyText{
+      margin-left: -1em;
+      
+    }
+  
   #createPostContainer {
     padding-top: 3%;
 
@@ -223,10 +353,12 @@ $baseTextColor: #070707;
     }
   }
 }
+//Större skärmar
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
-  body {
-    // max-width: 97%;
-  }
+  #friendsContainer{
+    width: clamp(5em, 9vw + 5.5em, 16em);
+    
+    }
   #createPostContainer {
     padding-top: 3%;
 
@@ -236,9 +368,10 @@ $baseTextColor: #070707;
   }
 }
 @media screen and (min-width: 1201px) {
-  body {
+  #friendsContainer{
+    width: clamp(12em, 15vw + 5.6em, 40em);
     
-  }
+    }
   #createPostContainer {
     padding-top: 3%;
 

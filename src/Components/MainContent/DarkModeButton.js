@@ -12,8 +12,12 @@ export default function DarkModeButton() {
 
     return (
         <Box>
-            <IconButton
-                sx={{ fontSize: "1rem", position: "fixed", left: "0", paddingTop: "1px" }}
+            <IconButton id="DarkModeButton"
+                sx={{ fontSize: "1rem", 
+                position: "fixed", 
+                left: "0", 
+                paddingTop: "1px" 
+            }}
                 onClick={muiUtils.toggleColorMode}
                 color="inherit"
                 disableTouchRipple
