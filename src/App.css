@@ -4,7 +4,7 @@
 }
 
 #root {
-  background-color: #e4f0f6;
+  background-color: var(--body_background);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -14,7 +14,7 @@
 #root #headerBar {
   margin-top: 1.5em;
   height: 8em;
-  background-color: #b6dcac;
+  background-color: var(--body_backgroundHeader);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,12 +24,12 @@
   font-family: "Times New Roman", Times, serif;
   color: #070707;
   font-size: 4em;
-  color: rgba(0, 37, 25, 0.6862745098);
+  color: var(--headerText_color);
 }
 #root #loggedInHeaderBar {
   margin-top: 1.5em;
   height: 8em;
-  background-color: #b6dcac;
+  background-color: var(--body_backgroundHeader);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,7 @@
   color: #070707;
   font-size: 4em;
   margin-left: 0.5em;
-  color: rgba(0, 37, 25, 0.6862745098);
+  color: var(--headerText_color);
 }
 #root #loggedInHeaderBar #accountSettingsContainer {
   margin-left: 0;
@@ -50,6 +50,34 @@
 }
 #root #loggedInHeaderBar #accountSettingsContainer #accountButton {
   margin-left: 0;
+}
+#root #accountSettings {
+  background-color: var(--body_backgroundHeader);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--baseText_color);
+}
+#root #accountSettingsCircle {
+  color: var(--accountSettings_circle);
+}
+#root #accountSettingsButton {
+  color: var(--accountSettings_button);
+  background-color: var(--accountSettings_buttonBackground);
+}
+#root #accountSettingsButtonRemove {
+  color: var(--accountSettings_button);
+  margin-top: 5em;
+}
+#root #createPostBox {
+  background-color: var(--posts_background);
+}
+#root #posts {
+  background-color: var(--posts_background);
+  color: var(--posts_text);
+}
+#root #postsBox {
+  background-color: var(--posts_box);
 }
 #root .like-button-container {
   display: flex;
@@ -84,8 +112,12 @@
   border-radius: 5px;
   position: fixed;
   align-self: flex-end;
-  background-color: #b6dcac;
+  background-color: var(--body_backgroundHeader);
   top: 15em;
+}
+#root #friendsContainer #friendsContainerBox {
+  background-color: var(--friendsContainer_box);
+  color: var(--friendsContainer_text);
 }
 #root #friendsContainer .onlineStatus {
   width: 10px;
@@ -99,8 +131,9 @@
 }
 #root #signInForm {
   padding: 3em;
-  background-color: #b6dcac;
+  background-color: var(--body_backgroundHeader);
   border-radius: 5px;
+  color: var(--baseText_color);
 }
 #root #signInForm #signInError {
   text-align: center;
@@ -118,8 +151,8 @@
 #root #signInForm #noAccount {
   display: flex;
   justify-content: center;
-  color: #070707;
-  text-decoration-color: #070707;
+  color: var(--baseText_color);
+  text-decoration-color: var(--baseText_color);
 }
 #root #signInForm #noAccount:hover {
   text-decoration-color: white;
@@ -127,8 +160,9 @@
 #root #signUpForm {
   margin-top: 4em;
   padding: 3em;
-  background-color: #b6dcac;
+  background-color: var(--body_backgroundHeader);
   border-radius: 5px;
+  color: var(--baseText_color);
 }
 #root #signUpForm p {
   text-align: center;
@@ -146,16 +180,112 @@
 #root #signUpForm #haveAccount {
   display: flex;
   justify-content: center;
-  color: #070707;
-  text-decoration-color: #070707;
+  color: var(--baseText_color);
+  text-decoration-color: var(--baseText_color);
 }
 #root #signUpForm #haveAccount:hover {
   text-decoration-color: white;
 }
 
+.dark_mode {
+  margin-top: -20px;
+  margin-left: 10px;
+  position: fixed;
+  left: 0;
+}
+.dark_mode .dark_mode_label {
+  width: 65px;
+  height: 30px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dark_mode .dark_mode_label:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.dark_mode .dark_mode_input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.dark_mode .dark_mode_input:checked + .dark_mode_label {
+  background: #242424;
+}
+.dark_mode .dark_mode_input:checked + .dark_mode_label:after {
+  left: 62px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+.dark_mode .dark_mode_label:active:after {
+  width: 30px;
+}
+.dark_mode .dark_mode_label svg {
+  position: absolute;
+  width: 20px;
+  top: 5px;
+  z-index: 100;
+}
+.dark_mode .dark_mode_label svg.sun {
+  left: 5px;
+  fill: #fff;
+  transition: 0.3s;
+}
+.dark_mode .dark_mode_label svg.moon {
+  left: 40px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+}
+.dark_mode .dark_mode_input:checked + .dark_mode_label svg.sun {
+  fill: #7e7e7e;
+}
+.dark_mode .dark_mode_input:checked + .dark_mode_label svg.moon {
+  fill: #fff;
+}
+
 @media screen and (max-width: 480px) {
-  body {
-    max-width: 97%;
+  #root > #friendsContainer {
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: #b6dcac;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
+    padding-left: 1em;
+  }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    margin-left: -1em;
   }
   #createPostContainer {
     padding-top: 3%;
@@ -165,6 +295,37 @@
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  #root > #friendsContainer {
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: #b6dcac;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
+    padding-left: 1em;
+  }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    margin-left: -1em;
+  }
   #createPostContainer {
     padding-top: 3%;
   }
@@ -173,6 +334,42 @@
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  #root > #friendsContainer {
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: #b6dcac;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
+  }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(1em, 28vw + 5.5em, 17em);
+  }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    margin-left: -1em;
+  }
   #createPostContainer {
     padding-top: 3%;
   }
@@ -181,6 +378,9 @@
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
+  #friendsContainer {
+    width: clamp(5em, 9vw + 5.5em, 16em);
+  }
   #createPostContainer {
     padding-top: 3%;
   }
@@ -189,6 +389,9 @@
   }
 }
 @media screen and (min-width: 1201px) {
+  #friendsContainer {
+    width: clamp(12em, 15vw + 5.6em, 40em);
+  }
   #createPostContainer {
     padding-top: 3%;
   }

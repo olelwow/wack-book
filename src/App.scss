@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  // transition: all 0.3s ease-in-out;
 }
 
 @mixin textStyle($textColor, $fontSize) {
@@ -23,7 +24,7 @@ $hoverColor: rgba(111, 117, 121, 0.275);
 $baseTextColor: #070707;
 
 #root {
-  background-color: $backgroundColor;
+  background-color: var(--body_background);
   height: 100vh;
   @include absoluteCenterWithFlex;
   flex-direction: column;
@@ -31,21 +32,20 @@ $baseTextColor: #070707;
   #headerBar {
     margin-top: 1.5em;
     height: 8em;
-    background-color: $elementColor;
+    background-color: var(--body_backgroundHeader);
     @include absoluteCenterWithFlex;
     flex-direction: row;
 
     #wackBookTitle {
       @include textStyle($baseTextColor, 4em);
-
-      color: #002519af;
+      color: var(--headerText_color);
     }
   }
 
   #loggedInHeaderBar {
     margin-top: 1.5em;
     height: 8em;
-    background-color: $elementColor;
+    background-color: var(--body_backgroundHeader);
     @include absoluteCenterWithFlex;
     flex-direction: row;
     overflow: hidden;
@@ -53,7 +53,7 @@ $baseTextColor: #070707;
     #wackBookTitle {
       @include textStyle($baseTextColor, 4em);
       margin-left: 0.5em;
-      color: #002519af;
+      color: var(--headerText_color);
     }
 
     #accountSettingsContainer {
@@ -65,6 +65,45 @@ $baseTextColor: #070707;
         margin-left: 0;
       }
     }
+  }
+
+  #accountSettings {
+    background-color: var(--body_backgroundHeader);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--baseText_color);
+  }
+
+  #accountSettingsCircle {
+    color: var(--accountSettings_circle);
+  }
+
+  #accountSettingsButton {
+    color: var(--accountSettings_button);
+    background-color: var(--accountSettings_buttonBackground);
+  }
+
+  #accountSettingsButtonRemove {
+    color: var(--accountSettings_button);
+    margin-top: 5em;
+  }
+
+  // #changePassWord {
+  //   background-color: var(--accountSettings_textbox);
+  // }
+
+  #createPostBox {
+    background-color: var(--posts_background);
+  }
+
+  #posts {
+    background-color: var(--posts_background);
+    color: var(--posts_text);
+  }
+
+  #postsBox {
+    background-color: var(--posts_box);
   }
 
   .like-button-container {
@@ -103,8 +142,13 @@ $baseTextColor: #070707;
     border-radius: 5px;
     position: fixed;
     align-self: flex-end;
-    background-color: $elementColor;
+    background-color: var(--body_backgroundHeader);
     top: 15em;
+
+    #friendsContainerBox {
+      background-color: var(--friendsContainer_box);
+      color: var(--friendsContainer_text);
+    }
 
     .onlineStatus {
       width: 10px;
@@ -121,8 +165,9 @@ $baseTextColor: #070707;
 
   #signInForm {
     padding: 3em;
-    background-color: $elementColor;
+    background-color: var(--body_backgroundHeader);
     border-radius: 5px;
+    color: var(--baseText_color);
 
     #signInError {
       text-align: center;
@@ -144,8 +189,8 @@ $baseTextColor: #070707;
     #noAccount {
       display: flex;
       justify-content: center;
-      color: $baseTextColor;
-      text-decoration-color: $baseTextColor;
+      color: var(--baseText_color);
+      text-decoration-color: var(--baseText_color);
 
       &:hover {
         text-decoration-color: white;
@@ -156,8 +201,9 @@ $baseTextColor: #070707;
   #signUpForm {
     margin-top: 4em;
     padding: 3em;
-    background-color: $elementColor;
+    background-color: var(--body_backgroundHeader);
     border-radius: 5px;
+    color: var(--baseText_color);
 
     p {
       text-align: center;
@@ -178,8 +224,8 @@ $baseTextColor: #070707;
     #haveAccount {
       display: flex;
       justify-content: center;
-      color: $baseTextColor;
-      text-decoration-color: $baseTextColor;
+      color: var(--baseText_color);
+      text-decoration-color: var(--baseText_color);
 
       &:hover {
         text-decoration-color: white;
@@ -187,11 +233,124 @@ $baseTextColor: #070707;
     }
   }
 }
+.dark_mode {
+  margin-top: -20px;
+  margin-left: 10px;
+  position: fixed;
+  left: 0;
+
+  .dark_mode_label {
+    width: 65px;
+    height: 30px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+      inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .dark_mode_label:after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+  .dark_mode_input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  .dark_mode_input:checked + .dark_mode_label {
+    background: #242424;
+  }
+  .dark_mode_input:checked + .dark_mode_label:after {
+    left: 62px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+  }
+  .dark_mode_label:active:after {
+    width: 30px;
+  }
+
+  .dark_mode_label svg {
+    position: absolute;
+    width: 20px;
+    top: 5px;
+    z-index: 100;
+  }
+  .dark_mode_label svg.sun {
+    left: 5px;
+    fill: #fff;
+    transition: 0.3s;
+  }
+  .dark_mode_label svg.moon {
+    left: 40px;
+    fill: #7e7e7e;
+    transition: 0.3s;
+  }
+  .dark_mode_input:checked + .dark_mode_label svg.sun {
+    fill: #7e7e7e;
+  }
+  .dark_mode_input:checked + .dark_mode_label svg.moon {
+    fill: #fff;
+  }
+}
+
+//Mobiltelefoner
 
 @media screen and (max-width: 480px) {
-  body {
-    max-width: 97%;
+  #root > #friendsContainer {
+    // width: clamp(1em, 28vw + 5.5em, 11em);
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: $elementColor;
+    // top: 15em;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
+    padding-left: 1em;
   }
+  #root #friendsListBoxOne,
+  #friendsListBoxTwo,
+  #friendsListBoxThree,
+  #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+
+  #root #JÖ,
+  #RB,
+  #OR,
+  #JTG {
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    // font-size: clamp(1em, 1vw+1em, 1.0em);
+    margin-left: -1em;
+  }
+
   #createPostContainer {
     padding-top: 3%;
 
@@ -200,10 +359,52 @@ $baseTextColor: #070707;
     }
   }
 }
+//Padda/större telefoner
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  body {
-    // max-width: 97%;
+  #root > #friendsContainer {
+    // width: clamp(1em, 28vw + 5.5em, 11em);
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: $elementColor;
+    // top: 15em;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
+    padding-left: 1em;
   }
+  #root #friendsListBoxOne,
+  #friendsListBoxTwo,
+  #friendsListBoxThree,
+  #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+
+  #root #JÖ,
+  #RB,
+  #OR,
+  #JTG {
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    // font-size: clamp(1em, 1vw+1em, 1.0em);
+    margin-left: -1em;
+  }
+
   #createPostContainer {
     padding-top: 3%;
 
@@ -212,10 +413,60 @@ $baseTextColor: #070707;
     }
   }
 }
+//Laptop och skärmar
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  body {
-    // max-width: 97%;
+  #root > #friendsContainer {
+    // width: clamp(1em, 28vw + 5.5em, 11em);
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: $elementColor;
+    // top: 15em;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
   }
+  #root #friendsListBoxOne,
+  #friendsListBoxTwo,
+  #friendsListBoxThree,
+  #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(1em, 28vw + 5.5em, 17em);
+  }
+
+  #root #friendsListBoxOne,
+  #friendsListBoxTwo,
+  #friendsListBoxThree,
+  #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+
+  #root #JÖ,
+  #RB,
+  #OR,
+  #JTG {
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    margin-left: -1em;
+  }
+
   #createPostContainer {
     padding-top: 3%;
 
@@ -224,9 +475,10 @@ $baseTextColor: #070707;
     }
   }
 }
+//Större skärmar
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
-  body {
-    // max-width: 97%;
+  #friendsContainer {
+    width: clamp(5em, 9vw + 5.5em, 16em);
   }
   #createPostContainer {
     padding-top: 3%;
@@ -237,7 +489,10 @@ $baseTextColor: #070707;
   }
 }
 @media screen and (min-width: 1201px) {
-  body {
+
+
+  #friendsContainer {
+    width: clamp(12em, 15vw + 5.6em, 40em);
   }
   #createPostContainer {
     padding-top: 3%;

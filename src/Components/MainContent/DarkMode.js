@@ -1,68 +1,40 @@
-  import React, { createContext, useMemo, useState, useEffect } from "react";
-  import {
-    createTheme,
-    ThemeProvider,
-    PaletteMode,
-    Direction,
-  } from "@mui/material";
-  import rtlPlugin from "stylis-plugin-rtl";
-  import { prefixer } from "stylis";
-  import { CacheProvider } from "@emotion/react";
-  import createCache from "@emotion/cache";
-  
-  export const MUIWrapperContext = createContext({
-    toggleColorMode: () => {},
-    changeDirection: (dir) => {},
-  });
-  
-  const cacheRtl = createCache({
-    key: "muirtl",
-    stylisPlugins: [prefixer, rtlPlugin],
-  });
-  
-  const emptyCache = createCache({
-    key: "meaningless-key",
-  });
-  
-  export default function DarkMode({ children }) {
-    const [mode, setMode] = useState("light");
-    const [direction, setDirection] = useState("ltr");
-    
-  
-    const muiWrapperUtils = useMemo(
-      () => ({
-        toggleColorMode: () => {
-          setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-        },
-        changeDirection: (dir) => {
-          setDirection(dir);
-        },
-      }),
-      []
-    );
-  
-    useEffect(() => {
-      document.dir = direction;
-    }, [direction]);
-  
-    const theme = useMemo(
-      () =>
-        createTheme({
-          palette: {
-            mode,
-          },
-          direction,
-        }),
-      [mode, direction]
-    );
-  
+import React from "react";
+import { ReactComponent as Sun } from "../Images/Sun.svg";
+import { ReactComponent as Moon } from "../Images/Moon.svg";
+
+const DarkMode = () => {
+    const setDarkMode = () => {
+        document.querySelector("body").setAttribute('data-theme', 'dark',)
+        localStorage.setItem("selectedTheme", "dark")
+    }
+    const setLightMode = () => {
+        document.querySelector("body").setAttribute('data-theme', 'light',)
+        localStorage.setItem("selectedTheme", "light")
+    }
+    const selectedTheme = localStorage.getItem("selectedTheme");
+        if (selectedTheme === "dark") {
+            setDarkMode();
+        }
+
+    const toggleTheme = (e) => {
+        if (e.target.checked) setDarkMode();
+        else setLightMode()
+    };
     return (
-      <CacheProvider value={direction === "rtl" ? cacheRtl : emptyCache}>
-        <MUIWrapperContext.Provider value={muiWrapperUtils}>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </MUIWrapperContext.Provider>
-      </CacheProvider>
+        <div className='dark_mode'>
+            <input
+                className='dark_mode_input'
+                type='checkbox'
+                id='darkmode-toggle'
+                onClick={toggleTheme}
+                defaultChecked = {selectedTheme === "dark"}
+            />
+            <label className='dark_mode_label' for='darkmode-toggle'>
+                <Sun />
+                <Moon />
+            </label>
+        </div>
     );
-  }
+};
 
-
+export default DarkMode;

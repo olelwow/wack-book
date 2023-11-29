@@ -4,7 +4,6 @@ import AccountMenu from "./AccountMenu";
 import WackBookHome from "./WackBookHome";
 import LanguageSelector from "../Language/LanguageSelector"
 import DarkMode from "./DarkMode";
-import DarkModeButton from "./DarkModeButton";
 
 
 const HeaderAfterLogin = ({isAuthenticated, setIsAuthenticated}) => {
@@ -12,9 +11,7 @@ const HeaderAfterLogin = ({isAuthenticated, setIsAuthenticated}) => {
   return (
     <AppBar id="loggedInHeaderBar">
       <LanguageSelector />
-      <DarkMode>
-      <DarkModeButton />
-      </DarkMode>
+      <DarkMode />
       <WackBookHome />
 
       <AccountMenu isAuthenticated={isAuthenticated}

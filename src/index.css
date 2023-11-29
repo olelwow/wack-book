@@ -2,3 +2,44 @@
   margin: 0;
   padding: 0;
 }/*# sourceMappingURL=index.css.map */
+
+:root {
+  --body_backgroundHeader: #b6dcac;
+  --headerText_color: #002519af;
+  --body_background: #e4f0f6;
+  --body_color: black;
+  --link_color: rgb(17, 17, 98);
+  --hover_color: rgba(111, 117, 121, 0.275);
+  --baseText_color: #121212;
+  --accountSettings_circle: #070707;
+  --accountSettings_button: #070707;
+  --accountSettings_buttonBackground: #cefac3;
+  --accountSettings_textbox: #b6dcac;
+  --friendsContainer_box: white;
+  --friendsContainer_text: black;
+  --posts_background: #b6dcac;
+  --posts_text: black;
+  --posts_box: #e4f0f6;
+  --posts_button: rgb(77, 77, 172);
+  --posts_buttontext: white;
+}
+[data-theme="dark"] {
+  --body_backgroundHeader: rgba(255, 255, 255, 0.12);
+  --headerText_color: #afb4b2af;
+  --body_background: #282c34;
+  --body_color: white;
+  --link_color: cyan;
+  --hover_color: rgba(203, 210, 214, 0.275);
+  --baseText_color: #f5efef;
+  --accountSettings_circle: #f5efef;
+  --accountSettings_button: #f5efef;
+  --accountSettings_buttonBackground: rgba(255, 255, 255, 0.12);
+  --accountSettings_textbox: rgba(255, 255, 255, 0.12);
+  --friendsContainer_box: rgba(255, 255, 255, 0.12);
+  --friendsContainer_text: rgb(182, 182, 182);
+  --posts_background: rgba(255, 255, 255, 0.12);
+  --posts_text: rgb(182, 182, 182);
+  --posts_box: rgb(84, 92, 96);
+  --posts_button: rgb(182, 182, 182);
+  --posts_buttontext: black;
+}
