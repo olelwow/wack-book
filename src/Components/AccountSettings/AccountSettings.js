@@ -8,13 +8,20 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import FormDialog from "./ChangePwOrUsnDialog";
+import { useTranslation } from "react-i18next";
 
 import { useState } from "react";
 
-const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, isAuthenticated }) => {
+const AccountSettings = ({
+  setLoggedInUser,
+  loggedInUser,
+  setIsAuthenticated,
+  isAuthenticated,
+}) => {
   const [newUserName, setNewUserName] = useState("");
   const [newPassWord, setNewPassWord] = useState("");
   const [alertOpen, setAlertOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleAlertClose = () => {
     setAlertOpen(false);
@@ -41,7 +48,7 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
             <TextField className="accountSettingsUserFields"
               sx={{ width: "20em", marginTop: "2em" }}
               id="changeUserName"
-              label="Byt användarnamn"
+              label={t("AccountSettings.0")}
               variant="standard"
               placeholder={loggedInUser}
               value={newUserName}
@@ -55,7 +62,7 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
                 marginLeft: "0.5em",
               }}
             >
-              Byt användarnamn
+              {t("AccountSettings.0")}
             </Button>
           </Box>
           <Box
@@ -67,7 +74,7 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
             <TextField
               sx={{ width: "20em", marginTop: "2em" }}
               id="changePassWord"
-              label="Byt lösenord"
+              label={t("AccountSettings.1")}
               variant="standard"
               value={newPassWord}
               onChange={(e) => setNewPassWord(e.target.value)}
@@ -80,7 +87,7 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
                 marginLeft: "1em",
               }}
             >
-              Byt ditt lösenord
+              {t("AccountSettings.1")}
             </Button>
           </Box>
           <Button
@@ -88,7 +95,7 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
             size="large"
             id="accountSettingsButtonRemove"
           >
-            Ta bort konto
+            {t("AccountSettings.2")}
           </Button>
         </Box>
       </Container>
@@ -110,4 +117,3 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
 };
 
 export default AccountSettings;
-

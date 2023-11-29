@@ -1,6 +1,8 @@
 import "./App.css";
 import { Routes1 } from "./Routes";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Suspense } from "react";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
@@ -9,13 +11,24 @@ function App() {
    * samt ifall man är 'authenticated' eller ej. isAuthenticated ändras till true när man loggar in
    * och till false när man loggar ut, vilket gör så att man inte kan hoppa fram och tillbaks
    * mellan sidor efter man loggat ut.
-  */
+   */
 
   return (
-    <Routes1 setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser} isAuthenticated={isAuthenticated} setIsAuthenticated ={setIsAuthenticated} />
+    <Routes1
+      setLoggedInUser={setLoggedInUser}
+      loggedInUser={loggedInUser}
+      isAuthenticated={isAuthenticated}
+      setIsAuthenticated={setIsAuthenticated}
+    />
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <Suspense fallback="....loading">
+      <App />
+    </Suspense>
+  );
+}
 
 // ALLA filer har nu detta useState.

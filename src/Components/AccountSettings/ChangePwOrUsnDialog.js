@@ -9,6 +9,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import GenerateCaesarCipher from "../LoginAndSignUp/CaesarCipher";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function FormDialog({
   isOpen,
@@ -20,11 +21,13 @@ export default function FormDialog({
   newUserName,
   setNewUserName,
   setIsAuthenticated,
-  isAuthenticated
+  isAuthenticated,
 }) {
-  const defaultUSNMessage = `Du är påväg att ändra ditt användarnamn... Skriv in ditt lösenord för att fortsätta.`;
-  const defaultPWMessage = `Du är påväg att ändra ditt lösenord... Skriv in ditt gamla lösenord för att fortsätta.`;
-  const defaultDeleteAccountMessage = `Du är påväg att ta bort ditt konto... Skriv in ditt lösenord för att bekräfta.`;
+  const { t, i18n } = useTranslation();
+
+  const defaultUSNMessage = `${t("AccountSettings.4")}`;
+  const defaultPWMessage = `${t("AccountSettings.5")}`;
+  const defaultDeleteAccountMessage = `${t("AccountSettings.6")}`;
 
   const [passwordCheck, setPasswordCheck] = useState("");
   const [userNameMessage, setUserNameMessage] = useState(defaultUSNMessage);
@@ -74,7 +77,7 @@ export default function FormDialog({
       onClose();
       setNewPassWord("");
     } else {
-      setPassWordMessage("Du skrev fel lösenord!");
+      setPassWordMessage(t("AccountSettings.7"));
     }
   };
 
@@ -119,7 +122,7 @@ export default function FormDialog({
       onClose();
       setNewUserName("");
     } else {
-      setUserNameMessage("Du skrev fel lösenord!");
+      setUserNameMessage(t("AccountSettings.7"));
     }
   };
 
@@ -146,7 +149,7 @@ export default function FormDialog({
         navigate("/");
         break;
       } else {
-        setDeleteAccountMessage("Du skrev fel lösenord!");
+        setDeleteAccountMessage(t("AccountSettings.7"));
       }
     }
   };
@@ -155,14 +158,14 @@ export default function FormDialog({
   if (newUserName !== "") {
     return (
       <Dialog open={isOpen} onClose={onClose}>
-        <DialogTitle>Ändra lösenord</DialogTitle>
+        <DialogTitle>{t("AccountSettings.0")}</DialogTitle>
         <DialogContent>
           <DialogContentText>{userNameMessage}</DialogContentText>
           <TextField
             autoFocus
             margin="dense"
             id="name"
-            label="Lösenord"
+            label={t("AccountSettings.3")}
             type="password"
             fullWidth
             variant="standard"
@@ -171,22 +174,22 @@ export default function FormDialog({
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={changeUserName}>Ändra</Button>
-          <Button onClick={onClose}>Avbryt</Button>
+          <Button onClick={changeUserName}>{t("AccountSettings.8")}</Button>
+          <Button onClick={onClose}>{t("AccountSettings.9")}</Button>
         </DialogActions>
       </Dialog>
     );
   } else if (newUserName === "" && newPassWord === "") {
     return (
       <Dialog open={isOpen} onClose={onClose}>
-        <DialogTitle>Ta bort konto.</DialogTitle>
+        <DialogTitle>{t("AccountSettings.2")}</DialogTitle>
         <DialogContent>
           <DialogContentText>{deleteAccountMessage}</DialogContentText>
           <TextField
             autoFocus
             margin="dense"
             id="name"
-            label="Lösenord"
+            label={t("AccountSettings.3")}
             type="password"
             fullWidth
             variant="standard"
@@ -195,8 +198,8 @@ export default function FormDialog({
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={deleteAccount}>Ta bort mitt konto</Button>
-          <Button onClick={onClose}>Avbryt</Button>
+          <Button onClick={deleteAccount}>{t("AccountSettings.2")}</Button>
+          <Button onClick={onClose}>{t("AccountSettings.9")}</Button>
         </DialogActions>
       </Dialog>
     );
@@ -204,14 +207,14 @@ export default function FormDialog({
 
   return (
     <Dialog open={isOpen} onClose={onClose}>
-      <DialogTitle>Ändra lösenord</DialogTitle>
+      <DialogTitle>{t("AccountSettings.1")}</DialogTitle>
       <DialogContent>
         <DialogContentText>{passWordMessage}</DialogContentText>
         <TextField
           autoFocus
           margin="dense"
           id="name"
-          label="Lösenord"
+          label={t("AccountSettings.3")}
           type="password"
           fullWidth
           variant="standard"
@@ -220,8 +223,8 @@ export default function FormDialog({
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={changePassWord}>Ändra</Button>
-        <Button onClick={onClose}>Avbryt</Button>
+        <Button onClick={changePassWord}>{t("AccountSettings.8")}</Button>
+        <Button onClick={onClose}>{t("AccountSettings.9")}</Button>
       </DialogActions>
     </Dialog>
   );

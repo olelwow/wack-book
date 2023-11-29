@@ -11,18 +11,27 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import GenerateCaesarCipher from "./CaesarCipher";
+import { useTranslation } from "react-i18next";
 
 const defaultTheme = createTheme();
 
-export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated, setIsAuthenticated }) {
+export default function SignIn({
+  setLoggedInUser,
+  loggedInUser,
+  isAuthenticated,
+  setIsAuthenticated,
+}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [wrongPass, setWrongPass] = useState(false);
-
   const navigate = useNavigate();
   // Setters för de olika fälten, samt navigate som styr vilken sida man hamnar på.
 
   // Variabel som används när man skriver rätt användarnamn men fel lösenord.
+
+  const { t, i18n } = useTranslation();
+
+  // Översättning
 
   const ValidateSignIn = (username, password) => {
     const { Encrypt } = GenerateCaesarCipher(
@@ -94,7 +103,6 @@ export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated,
         setUsername(username);
         // Sparar användarnamnet så man slipper skriva det igen, ifall username finns
         // men man har angett fel lösenord.
-       
       } else {
         alert("Användarnamnet existerar inte.");
         setUsername("");
@@ -124,7 +132,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated,
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Logga in
+            {t("Login.0")}
           </Typography>
           <Box
             component="form"
@@ -137,7 +145,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated,
               required
               fullWidth
               id="email"
-              label="Användarnamn"
+              label={t("Login.1")}
               name="email"
               autoComplete="email"
               autoFocus
@@ -149,7 +157,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated,
               required
               fullWidth
               name="password"
-              label="Lösenord"
+              label={t("Login.2")}
               type="password"
               id="password"
               value={password}
@@ -163,7 +171,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated,
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Logga in
+              {t("Login.0")}
             </Button>
 
             <Link
@@ -172,7 +180,7 @@ export default function SignIn({ setLoggedInUser, loggedInUser, isAuthenticated,
               variant="body2"
               sx={{ cursor: "pointer" }}
             >
-              {"Har du inget konto? Registrera här!"}
+              {t("Login.3")}
             </Link>
           </Box>
         </Box>

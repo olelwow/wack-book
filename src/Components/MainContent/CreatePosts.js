@@ -38,23 +38,24 @@ const lastName = [
   "Jobs",
   "Käck",
 ];
-const newPosts = [
-  "Isbjörnar alltså WOW!",
-  "Jag provade Eldorados Ketchup från Willy's. Fan vad GOTT! @Delzar",
-  "Gick in i en bokhandel och frågade var självhjälpsavdelningen var. Fick svaret: 'Om jag visste det skulle jag inte vara här.'",
-  "Fick ett brev från min dammsugare idag. Den ville bara säga att våra möten under sängen varit suveräna.",
-  "Min telefon gick sönder, så jag var tvungen att tillbringa tid med min familj. De verkar vara trevliga människor.",
-  "Varför tog matematikboken paraplyet till skolan? För att det var tvådelat!",
-  "Fick ett mejl från en prins i Nigeria som ville dela sitt arv. Skickade mina bankuppgifter och väntar fortfarande...",
-  "Beställde en pizza online och skrev i kommentarerna: 'Kan du rita en enhörning på lådan?' Pizzabagaren levererade, och nu är jag stamkund.",
-  "Alltså helt otroligt! Jag köpte en kunga-krona och när jag kom hem och öppnade kartongen var den tom...WTF!.",
-  "Försökte skriva en bok om trådlös teknik. Det var svårt att ansluta till handlingen.",
-];
 
 const CreateNewPost = ({ loggedInUser }) => {
   //Hämtar in data för vem som är inloggad.
+  const { t, i18n } = useTranslation();
 
-  const { t } = useTranslation();
+  const newPosts = [
+    t("MainPage.7"),
+    t("MainPage.8"),
+    t("MainPage.9"),
+    t("MainPage.10"),
+    t("MainPage.11"),
+    t("MainPage.12"),
+    t("MainPage.13"),
+    t("MainPage.14"),
+    t("MainPage.15"),
+    t("MainPage.16"),
+  ];
+
   const [text, setText] = useState("");
   const [createdElement, setCreatedElement] = useState([]);
   const name = loggedInUser.split("."); //Delar variabeln vid tecknet "." och blir här en array.
@@ -83,7 +84,8 @@ const CreateNewPost = ({ loggedInUser }) => {
     <React.Fragment>
       <CssBaseline />
       {/* Yttre lådan med alla inlägg och ruta för skapa inlägg */}
-      <Container id="createPostContainer"
+      <Container
+        id="createPostContainer"
         sx={{
           maxHeight: "69vh",
           overflow: "auto",
@@ -95,7 +97,8 @@ const CreateNewPost = ({ loggedInUser }) => {
         maxWidth="sm"
       >
         {/* Låda för skapa inlägg */}
-        <Box id="createPostBox"
+        <Box
+          id="createPostBox"
           sx={{
             display: "flex",
             flexDirection: "row",
@@ -108,7 +111,7 @@ const CreateNewPost = ({ loggedInUser }) => {
           <Box sx={{ flexGrow: 1 }}>
             <TextField
               id="newTextPostField"
-              label={t("Skapa Inlägg")}
+              label={t("MainPage.0")}
               multiline
               required
               value={text}
@@ -125,14 +128,14 @@ const CreateNewPost = ({ loggedInUser }) => {
               onClick={handleCreateElement}
               variant="contained"
               endIcon={<SendIcon />}
-              sx={{
                 background: "var(--posts_button)",
                 color: "var(--posts_buttontext)",
                 width: "48vh",
                 marginLeft: "4em",  
+
               }}
             >
-              Send
+              {t("MainPage.1")}
             </Button>
           </Box>
         </Box>
@@ -176,7 +179,9 @@ const CreateNewPost = ({ loggedInUser }) => {
                     }}
                   >
                     {/* Skriver ut för och efternamn i inläggsrutan */}
-                    <h4>{name[0]} {name[1]}</h4>
+                    <h4>
+                      {name[0]} {name[1]}
+                    </h4>
                     <Stack
                       sx={{
                         display: "flex",

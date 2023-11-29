@@ -1,0 +1,56 @@
+{
+    "LangSelector": {
+        "0": "Translate",
+        "1": "Swedish",
+        "2": "English"
+    },
+
+    "Login": {
+        "0" : "Sign in",
+        "1": "Username",
+        "2" : "Password",
+        "3": "No account? Click to sign up!"
+    },
+    "SignUp": {
+        "0": "Create new account",
+        "1": "First name",
+        "2": "Last name",
+        "3" : "Password",
+        "4": "Create account",
+        "5": "Do you already have an account? Sign in!"
+
+    },
+    "MainPage": {
+
+        "0": "Create post",
+        "1": "Send",
+        "2": "Account settings",
+        "3": "Sign out",
+        "4": "You are about to sign out, are you sure?",
+        "5": "While you are away you might miss important posts from your friends.",
+        "6": "Abort",
+        "7": "Polarbears, I mean WOW!!",
+        "8": "I tried Eldorado's Ketchup from Willy's. That's the STUFF! @Delzar",
+        "9": "I went into a bookstore and asked where the self-help section was. Got the answer: 'If I knew that I would not be here.'",
+        "10": "Got a letter from my vacuum cleaner today. It just wanted to let me know that our meetings under the bed has been superb.",
+        "11": "I broke my phone, so I had to spend time with my family. They seem like nice people.",
+        "12": "Why did the maths book take an umbrella to school? Because it was split in two!",
+        "13": "Got an email from a Nigerian prince who wanted to share his heritage. I sent him my bank details, still waiting....",
+        "14": "I ordered a pizza online and attatched a message: 'Can you draw a unicorn on the box?' The pizza guy delivered, and now I am a regular",
+        "15": "Unbelievable! I bought a king's crown and when I got home the box was empty...WTF!!",
+        "16": "I tried to write a book about wireless technology. I had trouble connecting to the plot."
+
+    },
+    "AccountSettings": {
+        "0": "Change username",
+        "1": "Change password",
+        "2": "Delete Account",
+        "3": "Password",
+        "4": "You are about to change your username... Enter your password to proceed.",
+        "5": "You are about to change your password... Enter your password to proceed.",
+        "6": "You are about to delete your account... Enter your password to proceed.",
+        "7": "You entered the wrong password!",
+        "8": "Proceed",
+        "9": "Abort"
+    }
+}
