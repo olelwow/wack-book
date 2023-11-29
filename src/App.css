@@ -255,8 +255,36 @@
 }
 
 @media screen and (max-width: 480px) {
-  body {
-    max-width: 97%;
+  #root > #friendsContainer {
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: #b6dcac;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
+    padding-left: 1em;
+  }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    margin-left: -1em;
   }
   #createPostContainer {
     padding-top: 3%;
@@ -266,6 +294,37 @@
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  #root > #friendsContainer {
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: #b6dcac;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
+    padding-left: 1em;
+  }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    margin-left: -1em;
+  }
   #createPostContainer {
     padding-top: 3%;
   }
@@ -274,6 +333,42 @@
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  #root > #friendsContainer {
+    padding: 3em;
+    height: 5em;
+    margin-right: 2em;
+    border-radius: 5px;
+    position: fixed;
+    align-self: flex-end;
+    background-color: #b6dcac;
+    bottom: 0;
+    left: 0em;
+    display: flex;
+    flex-direction: row;
+    top: auto;
+    padding-top: 0em;
+  }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(1em, 28vw + 5.5em, 17em);
+  }
+  #root #friendsListBoxOne, #friendsListBoxTwo, #friendsListBoxThree, #friendsListBoxFour {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.2em;
+    width: clamp(2em, 20vw + 1em, 17em);
+  }
+  #root .onlineStatus {
+    margin-left: -1em;
+  }
+  #root .AvatarBox {
+    margin-left: 0.2em;
+  }
+  #root .TypographyText {
+    margin-left: -1em;
+  }
   #createPostContainer {
     padding-top: 3%;
   }
@@ -282,6 +377,9 @@
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
+  #friendsContainer {
+    width: clamp(5em, 9vw + 5.5em, 16em);
+  }
   #createPostContainer {
     padding-top: 3%;
   }
@@ -290,6 +388,9 @@
   }
 }
 @media screen and (min-width: 1201px) {
+  #friendsContainer {
+    width: clamp(12em, 15vw + 5.6em, 40em);
+  }
   #createPostContainer {
     padding-top: 3%;
   }
