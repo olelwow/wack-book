@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function FriendsStack() {
   return (
     <Box id="friendsContainer" sx={{ flexGrow: 1, overflow: "hidden", px: 3 }}>
-      <Item
+      <Item id="friendsContainerBox"
         sx={{
           my: 2,
           mx: "auto",
@@ -34,7 +34,7 @@ export default function FriendsStack() {
           <Typography noWrap>Jonas Öhrn</Typography>
         </Stack>
       </Item>
-      <Item
+      <Item id="friendsContainerBox"
         sx={{
           my: 2,
           mx: "auto",
@@ -51,7 +51,7 @@ export default function FriendsStack() {
           </Stack>
         </Stack>
       </Item>
-      <Item
+      <Item id="friendsContainerBox"
         sx={{
           my: 2,
           mx: "auto",
@@ -68,7 +68,7 @@ export default function FriendsStack() {
           </Stack>
         </Stack>
       </Item>
-      <Item
+      <Item id="friendsContainerBox"
         sx={{
           my: 2,
           mx: "auto",

@@ -24,14 +24,7 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
     <React.Fragment>
       <CssBaseline />
       <Container id="accountSettingsPage" maxWidth="sm">
-        <Box
-          sx={{
-            bgcolor: "#b6dcac",
-            height: "50vh",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <Box id="accountSettings">
           <Typography
             variant="h3"
             component="div"
@@ -42,10 +35,10 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
           <Box
             sx={{ display: "flex", alignItems: "flex-end", marginLeft: "2em" }}
           >
-            <AccountCircle
-              sx={{ color: "#070707", mr: 1, my: 0.5, fontSize: "26px" }}
+            <AccountCircle id="accountSettingsCircle"
+              sx={{ mr: 1, my: 0.5, fontSize: "26px" }}
             />
-            <TextField
+            <TextField className="accountSettingsUserFields"
               sx={{ width: "20em", marginTop: "2em" }}
               id="changeUserName"
               label="Byt användarnamn"
@@ -54,12 +47,10 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
               value={newUserName}
               onChange={(e) => setNewUserName(e.target.value)}
             />
-            <Button
+            <Button id="accountSettingsButton"
               size="small"
               onClick={(e) => setAlertOpen(e.target)}
               sx={{
-                color: "#070707",
-                backgroundColor: "#cefac3",
                 my: 1,
                 marginLeft: "0.5em",
               }}
@@ -70,8 +61,8 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
           <Box
             sx={{ display: "flex", alignItems: "flex-end", marginLeft: "2em" }}
           >
-            <LockReset
-              sx={{ color: "#070707", mr: 1, my: 0.5, fontSize: "26px" }}
+            <LockReset id="accountSettingsCircle"
+              sx={{ mr: 1, my: 0.5, fontSize: "26px" }}
             />
             <TextField
               sx={{ width: "20em", marginTop: "2em" }}
@@ -81,12 +72,10 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
               value={newPassWord}
               onChange={(e) => setNewPassWord(e.target.value)}
             />
-            <Button
+            <Button id="accountSettingsButton"
               size="small"
               onClick={(e) => setAlertOpen(e.target)}
               sx={{
-                color: "#070707",
-                backgroundColor: "#cefac3",
                 my: 1,
                 marginLeft: "1em",
               }}
@@ -97,7 +86,7 @@ const AccountSettings = ({ setLoggedInUser, loggedInUser, setIsAuthenticated, is
           <Button
             onClick={(e) => setAlertOpen(e.target)}
             size="large"
-            sx={{ color: "#070707", marginTop: "5em" }}
+            id="accountSettingsButtonRemove"
           >
             Ta bort konto
           </Button>

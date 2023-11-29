@@ -97,13 +97,11 @@ const CreateNewPost = ({ loggedInUser }) => {
         {/* Låda för skapa inlägg */}
         <Box id="createPostBox"
           sx={{
-            bgcolor: "#B6DCAC",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             minHeight: "12vh",
             width: "100%",
-            
           }}
         >
           {/* Ruta där vi skriver in texten för inlägget */}
@@ -117,7 +115,7 @@ const CreateNewPost = ({ loggedInUser }) => {
               onChange={(e) => setText(e.target.value)}
               maxRows={4}
               sx={{
-                background: "#e4f0f6",
+                background: "var(--posts_box)",
                 display: "flex",
               }}
             />
@@ -128,10 +126,10 @@ const CreateNewPost = ({ loggedInUser }) => {
               variant="contained"
               endIcon={<SendIcon />}
               sx={{
-
+                background: "var(--posts_button)",
+                color: "var(--posts_buttontext)",
                 width: "48vh",
                 marginLeft: "4em",  
-
               }}
             >
               Send
@@ -157,7 +155,7 @@ const CreateNewPost = ({ loggedInUser }) => {
               createdElement.map((item, i) => (
                 <Box
                   sx={{
-                    bgcolor: "#B6DCAC",
+                    bgcolor: "var(--posts_background)",
                     display: "flex",
                     alignItems: "space-between",
                     padding: "0.5em",
@@ -172,6 +170,7 @@ const CreateNewPost = ({ loggedInUser }) => {
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
+                      color: "var(--posts_text)",
                       wordBreak: "break-word",
                       paddingLeft: "0.7em",
                     }}
@@ -195,7 +194,8 @@ const CreateNewPost = ({ loggedInUser }) => {
                   </Box>
                   <Box
                     sx={{
-                      bgcolor: "#e4f0f6",
+                      bgcolor: "var(--posts_box)",
+                      color: "var(--posts_text)",
                       width: "51.5vh",
                       minHeight: "6vh",
                       listStyleType: "none",
