@@ -26,9 +26,8 @@ const FakeAddedPosts = ({ author, content }) => {
           padding: 0,
         }}
       >
-        <Box
+        <Box id="posts"
           sx={{
-            bgcolor: "#B6DCAC",
             display: "flex",
             alignItems: "space-between",
             padding: "0.5em",
@@ -66,9 +65,8 @@ const FakeAddedPosts = ({ author, content }) => {
               <LikeButton />
             </Stack>
           </Box>
-          <Box
+          <Box id="postsBox"
             sx={{
-              bgcolor: "#e4f0f6",
               width: "51.5vh",
               minHeight: "6vh",
               listStyleType: "none",

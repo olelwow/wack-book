@@ -6,7 +6,6 @@ import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -18,11 +17,9 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function FriendsStack() {
   return (
-    <Box id="friendsContainer" 
-    sx={{ flexGrow: 1, 
-    overflow: "hidden", 
-    px: 3 }}>
-      <Item id="friendsListBoxOne"
+    <Box id="friendsContainer" sx={{ flexGrow: 1, overflow: "hidden", px: 3 }}>
+      <Item
+        id="friendsListBoxOne"
         sx={{
           my: 2,
           mx: "auto",
@@ -30,14 +27,17 @@ export default function FriendsStack() {
         }}
       >
         <Stack id="JÖ" spacing={3} direction="row" alignItems="center">
-        <div className="onlineStatus"></div>
+          <div className="onlineStatus"></div>
           <Stack className="AvatarBox">
             <Avatar>JÖ</Avatar>
           </Stack>
-          <Typography className="TypographyText" noWrap>Jonas Öhrn</Typography>
+          <Typography className="TypographyText" noWrap>
+            Jonas Öhrn
+          </Typography>
         </Stack>
       </Item>
-      <Item id="friendsListBoxTwo"
+      <Item
+        id="friendsListBoxTwo"
         sx={{
           my: 2,
           mx: "auto",
@@ -50,11 +50,14 @@ export default function FriendsStack() {
             <Avatar>RB</Avatar>
           </Stack>
           <Stack sx={{ minWidth: 0 }}>
-            <Typography className="TypographyText" noWrap>Rasmus Broman</Typography>
+            <Typography className="TypographyText" noWrap>
+              Rasmus Broman
+            </Typography>
           </Stack>
         </Stack>
       </Item>
-      <Item id="friendsListBoxThree"
+      <Item
+        id="friendsListBoxThree"
         sx={{
           my: 2,
           mx: "auto",
@@ -67,11 +70,14 @@ export default function FriendsStack() {
             <Avatar>OR</Avatar>
           </Stack>
           <Stack sx={{ minWidth: 0 }}>
-            <Typography className="TypographyText" noWrap>Olle Ristenstrand</Typography>
+            <Typography className="TypographyText" noWrap>
+              Olle Ristenstrand
+            </Typography>
           </Stack>
         </Stack>
       </Item>
-      <Item id="friendsListBoxFour"
+      <Item
+        id="friendsListBoxFour"
         sx={{
           my: 2,
           mx: "auto",
@@ -84,7 +90,9 @@ export default function FriendsStack() {
             <Avatar>JTG</Avatar>
           </Stack>
           <Stack sx={{ minWidth: 0 }}>
-            <Typography className="TypographyText" noWrap>Johnny The G</Typography>
+            <Typography className="TypographyText" noWrap>
+              Johnny The G
+            </Typography>
           </Stack>
         </Stack>
       </Item>
