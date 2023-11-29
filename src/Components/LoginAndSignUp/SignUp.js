@@ -76,9 +76,7 @@ export default function SignUp() {
       setPassword("");
       // Tömmer input-rutorna.
     } else {
-      setErrorMessage(
-        "Ditt lösenord måste vara 8 tecken långt, innehålla stor bokstav samt en siffra."
-      );
+      setErrorMessage(t("SignUp.6"));
     }
     // Kontrollerar lösenordet med hjälp av validatePassword, sparar endast användaren ifall lösenordet uppfyller kraven.
   }

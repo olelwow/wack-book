@@ -1,7 +1,6 @@
 import "./App.css";
 import { Routes1 } from "./Routes";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Suspense } from "react";
 
 function App() {

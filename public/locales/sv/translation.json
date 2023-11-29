@@ -9,7 +9,8 @@
         "0": "Logga in",
         "1": "Användarnamn",
         "2": "Lösenord",
-        "3": "Har du inget konto? Registrera här!" 
+        "3": "Har du inget konto? Registrera här!"
+        
     },
     "SignUp": {
         "0": "Registrera nytt konto", 
@@ -17,8 +18,8 @@
         "2": "Efternamn", 
         "3": "Lösenord", 
         "4": "Registrera konto", 
-        "5": "Har du redan ett konto? Logga in!" 
-
+        "5": "Har du redan ett konto? Logga in!" ,
+        "6": "Ditt lösenord måste vara 8 tecken långt, innehålla stor bokstav samt en siffra."
     },
     "MainPage": {
 

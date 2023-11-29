@@ -10,6 +10,7 @@
         "1": "Username",
         "2" : "Password",
         "3": "No account? Click to sign up!"
+        
     },
     "SignUp": {
         "0": "Create new account",
@@ -17,8 +18,8 @@
         "2": "Last name",
         "3" : "Password",
         "4": "Create account",
-        "5": "Do you already have an account? Sign in!"
-
+        "5": "Do you already have an account? Sign in!",
+        "6": "Your password must contain at least 8 characters, one uppercase letter and a number."
     },
     "MainPage": {
 

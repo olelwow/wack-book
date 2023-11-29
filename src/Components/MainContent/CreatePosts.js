@@ -128,11 +128,11 @@ const CreateNewPost = ({ loggedInUser }) => {
               onClick={handleCreateElement}
               variant="contained"
               endIcon={<SendIcon />}
+              sx={{
                 background: "var(--posts_button)",
                 color: "var(--posts_buttontext)",
                 width: "48vh",
-                marginLeft: "4em",  
-
+                marginLeft: "4em",
               }}
             >
               {t("MainPage.1")}
