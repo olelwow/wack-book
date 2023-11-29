@@ -16,8 +16,6 @@ const LanguageSelector = () => {
     { value: "en", text: t("LangSelector.2") },
   ];
 
-  const locales = ["en", "sv"];
-
   return (
     <Box id="LangContainer" sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
