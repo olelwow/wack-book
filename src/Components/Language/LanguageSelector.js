@@ -1,36 +1,45 @@
-import React, {useState} from 'react';
-import i18n from 'i18next';
-import Box from '@mui/material/Box';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import Box from "@mui/material/Box";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import i18next from "i18next";
 
 const LanguageSelector = () => {
+  const { t, i18n } = useTranslation();
+  const { value, setValue } = useState("");
 
-    const [selectedLanguage, setSelectedLanguage] = useState(i18n.language); //// i18n.language innehåller valt språk som är tilldelat till "lng" i i18n.js filen.
+  const languages = [
+    { value: "sv", text: t("LangSelector.1") },
+    { value: "en", text: t("LangSelector.2") },
+  ];
 
-    const chooseLanguage = (e) => {
-        e.preventDefault();
-        i18n.changeLanguage(e.target.value); //Används för att byta språk som är tilldelat i filen.
-        setSelectedLanguage(e.target.value);
+  const locales = ["en", "sv"];
 
-    }
-
-    return (
-        <Box sx={{ minWidth: 120 }}>
+  return (
+    <Box id="LangContainer" sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel sx={{  }} id="demo-simple-select-label">Language</InputLabel>
-        <Select defaultValue={selectedLanguage} onChange={(e) => chooseLanguage}>
-
-            <MenuItem value="sv">Svenska</MenuItem>
-            <MenuItem value="en">Engelska</MenuItem>
+        <InputLabel sx={{ paddingBottom: "1em" }} id="demo-simple-select-label">
+          {t("LangSelector.0")}
+        </InputLabel>
+        <Select type="submit" value={value}>
+          {languages.map((item) => {
+            return (
+              <MenuItem
+                onClick={() => i18next.changeLanguage(item.value)}
+                key={item.value}
+                value={item.value}
+              >
+                {item.text}
+              </MenuItem>
+            );
+          })}
         </Select>
       </FormControl>
     </Box>
   );
-        
-
 };
 
 export default LanguageSelector;

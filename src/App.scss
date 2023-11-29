@@ -33,6 +33,7 @@ $baseTextColor: #070707;
     height: 8em;
     background-color: $elementColor;
     @include absoluteCenterWithFlex;
+    flex-direction: row;
 
     #wackBookTitle {
       @include textStyle($baseTextColor, 4em);
@@ -237,7 +238,6 @@ $baseTextColor: #070707;
 }
 @media screen and (min-width: 1201px) {
   body {
-    
   }
   #createPostContainer {
     padding-top: 3%;
@@ -246,7 +246,7 @@ $baseTextColor: #070707;
       width: 106%;
     }
   }
-  #PostIdName{
+  #PostIdName {
     // text-align: ;
   }
 }

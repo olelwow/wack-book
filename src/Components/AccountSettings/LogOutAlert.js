@@ -5,11 +5,16 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
+const LogOutAlert = ({
+  isOpen,
+  onClose,
+  setIsAuthenticated,
+  isAuthenticated,
+}) => {
+  const { t, i18n } = useTranslation();
 
-
-const LogOutAlert = ({isOpen, onClose, setIsAuthenticated, isAuthenticated}) => {
- 
   const navigate = useNavigate();
 
   const handleAlertClose = () => {
@@ -17,7 +22,6 @@ const LogOutAlert = ({isOpen, onClose, setIsAuthenticated, isAuthenticated}) => 
   };
 
   const LogOutConfirm = () => {
-    
     setIsAuthenticated(false);
     onClose();
     navigate("/");
@@ -31,19 +35,16 @@ const LogOutAlert = ({isOpen, onClose, setIsAuthenticated, isAuthenticated}) => 
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
-      <DialogTitle id="alert-dialog-title">
-        {"Du är påväg att logga ut, är du säker?"}
-      </DialogTitle>
+      <DialogTitle id="alert-dialog-title">{t("MainPage.3")}</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          Medans du är utloggad kanske du missar viktiga inlägg från dina
-          vänner.
+          {t("MainPage.4")}
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={LogOutConfirm}>Logga ut</Button>
+        <Button onClick={LogOutConfirm}>{t("MainPage.3")}</Button>
         {/* Loggar ut användaren */}
-        <Button onClick={handleAlertClose}>Avbryt utloggning</Button>
+        <Button onClick={handleAlertClose}>{t("MainPage.6")}</Button>
         {/* Avbryter utloggning */}
       </DialogActions>
     </Dialog>

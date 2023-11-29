@@ -11,6 +11,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import GenerateCaesarCipher from "./CaesarCipher";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const defaultTheme = createTheme();
 
@@ -32,6 +33,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const { Encrypt, Decrypt } = GenerateCaesarCipher(
     13,
@@ -101,7 +103,7 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Registrera nytt konto
+            {t("SignUp.0")}
           </Typography>
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <TextField
@@ -109,7 +111,7 @@ export default function SignUp() {
               required
               fullWidth
               id="firstName"
-              label="Förnamn"
+              label={t("SignUp.1")}
               name="firstname"
               autoFocus
               value={firstname}
@@ -120,7 +122,7 @@ export default function SignUp() {
               required
               fullWidth
               name="lastname"
-              label="Efternamn"
+              label={t("SignUp.2")}
               type="lastnameInput"
               id="lastName"
               value={lastname}
@@ -131,7 +133,7 @@ export default function SignUp() {
               required
               fullWidth
               id="signUpPassWord"
-              label="Lösenord"
+              label={t("SignUp.3")}
               name="password"
               type="passwordInput"
               value={password}
@@ -145,7 +147,7 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Registrera konto
+              {t("SignUp.4")}
             </Button>
 
             <Link
@@ -154,7 +156,7 @@ export default function SignUp() {
               variant="body2"
               sx={{ cursor: "pointer" }}
             >
-              {"Har du redan ett konto? Logga in!"}
+              {t("SignUp.5")}
             </Link>
           </Box>
         </Box>

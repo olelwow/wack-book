@@ -1,0 +1,55 @@
+{
+    "LangSelector": {
+        "0": "Översätt",
+        "1": "Svenska",
+        "2": "Engelska"
+    },
+
+    "Login": {
+        "0": "Logga in",
+        "1": "Användarnamn",
+        "2": "Lösenord",
+        "3": "Har du inget konto? Registrera här!" 
+    },
+    "SignUp": {
+        "0": "Registrera nytt konto", 
+        "1": "Förnamn", 
+        "2": "Efternamn", 
+        "3": "Lösenord", 
+        "4": "Registrera konto", 
+        "5": "Har du redan ett konto? Logga in!" 
+
+    },
+    "MainPage": {
+
+        "0": "Skapa inlägg", 
+        "1": "Skicka", 
+        "2": "Kontoinställningar", 
+        "3": "Logga ut", 
+        "4": "Du är påväg att logga ut, är du säker?", 
+        "5": "Medans du är utloggad kanske du missar viktiga inlägg från dina vänner.",  
+        "6": "Avbryt utloggning", 
+        "7": "Isbjörnar alltså WOW!", 
+        "8": "Jag provade Eldorados Ketchup från Willy's. Fan vad GOTT! @Delzar", 
+        "9": "Gick in i en bokhandel och frågade var självhjälpsavdelningen var. Fick svaret: 'Om jag visste det skulle jag inte vara här.'", 
+        "10": "Fick ett brev från min dammsugare idag. Den ville bara säga att våra möten under sängen varit suveräna.", 
+        "11": "Min telefon gick sönder, så jag var tvungen att tillbringa tid med min familj. De verkar vara trevliga människor.", 
+        "12": "Varför tog matematikboken paraplyet till skolan? För att det var tvådelat!",
+        "13": "Fick ett mejl från en prins i Nigeria som ville dela sitt arv. Skickade mina bankuppgifter och väntar fortfarande...",
+        "14": "Beställde en pizza online och skrev i kommentarerna: 'Kan du rita en enhörning på lådan?' Pizzabagaren levererade, och nu är jag stamkund.", 
+        "15": "Alltså helt otroligt! Jag köpte en kunga-krona och när jag kom hem och öppnade kartongen var den tom...WTF!.",
+        "16": "Försökte skriva en bok om trådlös teknik. Det var svårt att ansluta till handlingen." 
+    },
+    "AccountSettings": {
+        "0": "Byt användarnamn",
+        "1": "Byt lösenord",
+        "2": "Ta bort konto",
+        "3": "Lösenord",
+        "4": "Du är påväg att ändra ditt användarnamn... Skriv in ditt lösenord för att fortsätta.",
+        "5": "Du är påväg att ändra ditt lösenord... Skriv in ditt gamla lösenord för att fortsätta.",
+        "6": "Du är påväg att ta bort ditt konto... Skriv in ditt lösenord för att bekräfta.",
+        "7": "Du skrev fel lösenord!",
+        "8": "Ändra",
+        "9": "Avbryt" 
+    }
+}

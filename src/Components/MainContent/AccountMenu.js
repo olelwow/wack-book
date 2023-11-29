@@ -8,14 +8,14 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-
 import LogOutAlert from "../AccountSettings/LogOutAlert";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-export default function AccountMenu({isAuthenticated, setIsAuthenticated}) {
+export default function AccountMenu({ isAuthenticated, setIsAuthenticated }) {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const [logOutAlertOpen, setLogOutAlertOpen] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -103,16 +103,21 @@ export default function AccountMenu({isAuthenticated, setIsAuthenticated}) {
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
-          Kontoinställningar
+          {t("MainPage.2")}
         </MenuItem>
         <MenuItem onClick={handleLogOutAlertOpen}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logga ut
+          {t("MainPage.3")}
         </MenuItem>
       </Menu>
-      <LogOutAlert isOpen={logOutAlertOpen} onClose={handleLogOutAlertClose} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      <LogOutAlert
+        isOpen={logOutAlertOpen}
+        onClose={handleLogOutAlertClose}
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+      />
       {/* Här kan man skicka in så kallade props genom komponenten, som sedan kan användas i komponenten. */}
     </React.Fragment>
   );

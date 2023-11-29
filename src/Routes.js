@@ -6,12 +6,41 @@ import { MainPage } from "./Components/Pages/MainPage";
 import AccountSettingsPage from "./Components/Pages/AccountSettingsPage";
 import WackBookHome from "./Components/MainContent/WackBookHome";
 
-export const Routes1 = ({ setLoggedInUser, loggedInUser, isAuthenticated, setIsAuthenticated }) => {
+export const Routes1 = ({
+  setLoggedInUser,
+  loggedInUser,
+  isAuthenticated,
+  setIsAuthenticated,
+}) => {
   return (
     <Router>
       <Routes>
         <Route
           path="/"
+          element={
+            <LoginPage
+              setLoggedInUser={setLoggedInUser}
+              loggedInUser={loggedInUser}
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+              /*{Alla useStates som behövs på de olika sidorna skickas med här.}*/
+            />
+          }
+        />
+        <Route
+          path="/?lng=sv"
+          element={
+            <LoginPage
+              setLoggedInUser={setLoggedInUser}
+              loggedInUser={loggedInUser}
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+              /*{Alla useStates som behövs på de olika sidorna skickas med här.}*/
+            />
+          }
+        />
+        <Route
+          path="/?lng=en"
           element={
             <LoginPage
               setLoggedInUser={setLoggedInUser}
@@ -33,34 +62,42 @@ export const Routes1 = ({ setLoggedInUser, loggedInUser, isAuthenticated, setIsA
         />
         <Route
           path="MainPage"
-          element={ isAuthenticated? (
-            <MainPage
-              setLoggedInUser={setLoggedInUser}
-              loggedInUser={loggedInUser}
-              isAuthenticated={isAuthenticated}
-              setIsAuthenticated={setIsAuthenticated}
-            />) : (<LoginPage
-              setLoggedInUser={setLoggedInUser}
-              loggedInUser={loggedInUser}
-              isAuthenticated={isAuthenticated}
-              setIsAuthenticated={setIsAuthenticated}
-            />)
+          element={
+            isAuthenticated ? (
+              <MainPage
+                setLoggedInUser={setLoggedInUser}
+                loggedInUser={loggedInUser}
+                isAuthenticated={isAuthenticated}
+                setIsAuthenticated={setIsAuthenticated}
+              />
+            ) : (
+              <LoginPage
+                setLoggedInUser={setLoggedInUser}
+                loggedInUser={loggedInUser}
+                isAuthenticated={isAuthenticated}
+                setIsAuthenticated={setIsAuthenticated}
+              />
+            )
           }
         />
         <Route
           path="AccountSettingsPage"
-          element={ isAuthenticated? (
-            <AccountSettingsPage
-              setLoggedInUser={setLoggedInUser}
-              loggedInUser={loggedInUser}
-              isAuthenticated={isAuthenticated}
-              setIsAuthenticated={setIsAuthenticated}
-            /> ) : (<LoginPage
-              setLoggedInUser={setLoggedInUser}
-              loggedInUser={loggedInUser}
-              isAuthenticated={isAuthenticated}
-              setIsAuthenticated={setIsAuthenticated}
-            />)
+          element={
+            isAuthenticated ? (
+              <AccountSettingsPage
+                setLoggedInUser={setLoggedInUser}
+                loggedInUser={loggedInUser}
+                isAuthenticated={isAuthenticated}
+                setIsAuthenticated={setIsAuthenticated}
+              />
+            ) : (
+              <LoginPage
+                setLoggedInUser={setLoggedInUser}
+                loggedInUser={loggedInUser}
+                isAuthenticated={isAuthenticated}
+                setIsAuthenticated={setIsAuthenticated}
+              />
+            )
           }
         />
         <Route
@@ -69,11 +106,11 @@ export const Routes1 = ({ setLoggedInUser, loggedInUser, isAuthenticated, setIsA
             <>
               <WackBookHome />
               <LoginPage
-              setLoggedInUser={setLoggedInUser}
-              loggedInUser={loggedInUser}
-              isAuthenticated={isAuthenticated}
-              setIsAuthenticated={setIsAuthenticated}
-            />
+                setLoggedInUser={setLoggedInUser}
+                loggedInUser={loggedInUser}
+                isAuthenticated={isAuthenticated}
+                setIsAuthenticated={setIsAuthenticated}
+              />
             </>
           }
         />
